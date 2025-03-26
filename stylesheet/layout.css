@@ -1,4 +1,3 @@
-
 body {
     display: flex;
     flex-direction: column;
@@ -14,7 +13,446 @@ body {
 * {
     cursor: url(../img/Vector.svg) 42 37, auto !important;
 }
+.menuska {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+}
+/* меню */
+.menu_screen {
+    position: relative;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  height: 65vw;
+}
+.menu_container {
+    margin-top: 1.9%;
+ line-height: 5%;
+padding-left: 2vw;
+padding-right: 2vw;
+  text-align: justify;
+  text-transform: uppercase;
+  font-family: "Futura_PT", sans-serif;
+}
 
+.letter {
+    line-height: 1;
+    font-size: 8vw;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.circle_menu, .cube_menu, .star_menu, .triangle_menu,.triangle2_menu {
+    position: absolute;
+    width: 5%;
+    z-index: -1;
+    animation: rotateAnimation 10s linear infinite; 
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+.star_menu {
+    top:10% ;
+    left: 4%;
+}
+.triangle2_menu{
+    left: 4%;
+    top:38% ;
+}
+.circle_menu {
+    left: 50%;
+    top:31% ;
+}
+.cube_menu {
+    left:43%;
+    top:8% ;
+}
+.triangle_menu {
+    left:72%;
+    top:17.4% ;
+    width: 4%;
+}
+.rectangles_menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5.2%;
+    padding-left: 2.6%;
+    padding-left: 2.6%;
+    margin-top: 1%;
+}
+.rectangle_menu1, .rectangle_menu2, .rectangle_menu3, .rectangle_menu4, .rectangle_menu5 {
+    width: 15vw;
+}
+.buttons_menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 5.2%;
+    padding-left: 2.6%;
+    padding-left: 2.6%;
+    margin-top: 1%;
+}
+.games_menu {
+    margin-left: 10%;
+    margin-top: -5%;
+}
+
+/* Стиль для кнопок */
+.buttons_menu button {
+    width: 97%;
+    height: 97%;
+    font-size: 1.6vw;
+    padding: 5% 5%;
+    border-radius: 20px;
+    font-family: "Futura_PT", sans-serif;
+    background-color: #FBF6ED;
+    z-index: 1;
+}
+
+
+.button_2048 {
+    border: 2px solid;
+    grid-column: 1;
+    border-color: #F28482; 
+    color:#F28482 ;
+}
+
+.button_canvas {
+    border: 2px solid;
+    grid-column: 2;
+    border-color: #A3A54F;
+    color:#A3A54F ;
+
+}
+
+.button_catch_star {
+    border: 2px solid;
+    grid-column: 3;
+    margin-left: -5%;
+    border-color: #F8C4BB;
+    color: #F8C4BB;
+}
+
+.button_find_a_couple {
+    border: 2px solid;
+    grid-column: 4;
+    margin-left: -8%;
+    border-color: #84A59D; 
+    color: #84A59D;
+}
+
+.button_divination {
+    border: 2px solid;
+    grid-column: 5;
+    margin-left: -10%;
+    border-color: #F6BE61; 
+    color: #F6BE61;
+}
+
+.buttons_menu button a {
+    text-decoration: none; 
+    color: inherit; 
+}
+.cube_4 {
+    top: 53%;
+    left: 2%;
+    width: 10%;
+}
+.cube_16 {
+    top: 56%;
+    left: 9%;
+    width: 10%;
+}
+.cube_64 {
+    top: 68%;
+    left: 8%;
+    width: 12%;
+} 
+.cube_128 {
+    top: 67%;
+    left: 0%;
+    width: 11%;
+} 
+
+.first_game_cube:hover .cube_4,
+.first_game_cube:hover .cube_16,
+.first_game_cube:hover .cube_64,
+.first_game_cube:hover .cube_128 {
+    animation-play-state: running;
+}
+
+.cube_4, .cube_16, .cube_64, .cube_128 {
+    position: absolute;
+    animation-play-state: paused;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.cube_4 {
+    animation-name: sway4;
+}
+.cube_16 {
+    animation-name: sway16;
+}
+.cube_64 {
+    animation-name: sway64;
+}
+.cube_128 {
+    animation-name: sway128;
+}
+
+/* Разные вариации покачивания */
+@keyframes sway4 {
+    0% { transform: rotate(-5deg) translateX(-3px); }
+    50% { transform: rotate(3deg) translateX(2px); }
+    100% { transform: rotate(-5deg) translateX(-3px); }
+}
+
+@keyframes sway16 {
+    0% { transform: rotate(2deg) translateY(-3px); }
+    50% { transform: rotate(-2deg) translateY(3px); }
+    100% { transform: rotate(2deg) translateY(-3px); }
+}
+
+@keyframes sway64 {
+    0% { transform: rotate(-4deg) translateX(2px); }
+    50% { transform: rotate(5deg) translateX(-2px); }
+    100% { transform: rotate(-4deg) translateX(2px); }
+}
+
+@keyframes sway128 {
+    0% { transform: rotate(-3deg) translateY(2px); }
+    50% { transform: rotate(4deg) translateY(-2px); }
+    100% { transform: rotate(-3deg) translateY(2px); }
+}
+
+.first_game_cube:hover .cap_menu,
+.first_game_cube:hover .star_yellow1,
+.first_game_cube:hover .star_yellow2,
+.first_game_cube:hover .star_yellow3 {
+    animation-play-state: running;
+}
+
+/* Шапка */
+.cap_menu {
+    position: absolute;
+    width: 10%;
+    top: 64.5%;
+    left: 45%;
+    animation: swayCap 1.8s ease-in-out infinite alternate;
+    animation-play-state: paused;
+}
+
+/* Звезды */
+.star_yellow1, .star_yellow2 , .star_yellow3 {
+    position: absolute;
+    width: 6%;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused; /* По умолчанию анимация на паузе */
+}
+
+/* Разные движения для звезд */
+.star_yellow1 { animation-name: floatStar1; }
+.star_yellow2 { animation-name: floatStar2; }
+.star_yellow3 { animation-name: floatStar3; }
+
+/* Позиции */
+.star_yellow1 {
+    top: 52%;
+    left: 46.5%;
+    z-index: 2;
+}
+
+.star_yellow2 {
+    top: 58%;
+    left: 41%;
+    z-index: 2;
+}
+
+.star_yellow3 {
+    top: 58%;
+    left: 52.2%;
+    z-index: 2;
+}
+
+/* Анимация для колпака (раскачивание) */
+@keyframes swayCap {
+    0% { transform: rotate(-5deg) translateX(-6px); }
+    50% { transform: rotate(4deg) translateX(5px); }
+    100% { transform: rotate(-3deg) translateX(-4px); }
+}
+
+/* Разные анимации для звезд (чтобы не выглядели одинаково) */
+@keyframes floatStar1 {
+    0% { transform: translateY(-6px) rotate(-2deg); }
+    50% { transform: translateY(5px) rotate(2deg); }
+    100% { transform: translateY(-6px) rotate(-2deg); }
+}
+
+@keyframes floatStar2 {
+    0% { transform: translateY(-3px) rotate(3deg); }
+    50% { transform: translateY(6px) rotate(-3deg); }
+    100% { transform: translateY(-3px) rotate(3deg); }
+}
+
+@keyframes floatStar3 {
+    0% { transform: translateY(-4px) rotate(-1deg); }
+    50% { transform: translateY(7px) rotate(1deg); }
+    100% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+.palette_menu{
+    width: 20%;
+    position: absolute;
+    top: 54%;
+    left: 20%;
+    animation: sway 2s ease-in-out infinite;
+    animation-play-state: paused; 
+}
+@keyframes sway {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+.palette_menu:hover {
+    animation-play-state: running; 
+}
+
+.card_front_menu, .card_back_menu, .star_card_menu {
+    
+    position: absolute; 
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.card_front_menu {
+    left: 67%;
+    top: 58%;
+    width: 14%;
+    z-index:2 ;
+    animation-name: shakeCard1; 
+}
+
+.card_back_menu {
+    left: 61%;
+    top: 55%;
+    z-index:2 ;
+    width: 12.5%;
+    z-index:1 ;
+    animation-name: shakeCard2; 
+}
+
+.star_card_menu {
+    left: 58%;
+    top: 50%;
+    width: 24%;
+    animation-name: rotateStar;
+    animation-duration: 15s;
+}
+
+@keyframes shakeCard1 {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+@keyframes shakeCard2 {
+    0% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    100% { transform: rotate(3deg); }
+}
+
+@keyframes rotateStar {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+    
+}
+
+
+.hand_menu, .eye_menu, .moon_menu{
+    position: absolute;
+animation-duration: 2s;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-play-state: paused;
+
+}
+
+.hand_menu, .eye_menu, .moon_menu {
+    position: absolute;
+    animation-duration: 1s; 
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.hand_menu {
+    left: 82.5%;
+    top: 52%;
+    width: 17%;
+    z-index: 1;
+}
+
+.eye_menu {
+    left: 86.4%;
+    top: 73%;
+    width: 8%;
+    z-index: 2;
+    animation-name: shakeEye;
+}
+
+.moon_menu {
+    left: 88.5%;
+    top: 74.5%;
+    width: 2%;
+    z-index: 3;
+    animation-name: moveMoon;
+}
+
+/* Анимация покачивания для глаза */
+@keyframes shakeEye {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Анимация для движения луны (имитация зрачка) */
+@keyframes moveMoon {
+    0% { transform: translateX(0) translateY(0); }
+    20% { transform: translateX(3px) translateY(-2px); }
+    40% { transform: translateX(5px) translateY(5px); }
+    60% { transform: translateX(-5px) translateY(-3px); }
+    80% { transform: translateX(-3px) translateY(4px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+
+.menu:hover .eye_menu,
+.menu:hover .moon_menu,
+.menu:hover .hand_menu {
+    animation-play-state: running;
+}
+
+
+.menu img {
+    animation-play-state: paused;
+}
 /* КАРТЫ */
 .cards_game {
     display: flex;
@@ -85,14 +523,14 @@ body {
 .star2 {
     position: absolute;
     width: 20%;
-    left: -10%;
+    right: 89%;
     top:66%;
 }
 .star3 {
     position: absolute;
     width: 18%;
     left: 88%;
-    top: -13%;
+    bottom: 90%;
 }
 .star4 {
     position: absolute;
@@ -113,54 +551,6 @@ body {
     position: absolute;
     animation: rotate 20s infinite linear; 
   }
-
-@media (max-width: 768px) {
-    .star3 {
-        margin-top: 15%;
-        margin-right: -40%;
-    }
-    .card-container {
-        grid-template-columns: repeat(4, 1fr); 
-        aspect-ratio: 4 / 4; 
-        gap: 5px;
-    }
-    .game-container { 
-        height: 145vw;
-    }
-    .card {
-        aspect-ratio: 3 / 4.5;
-    }
-    .cards_game {
-        height: 145vw;
-    }
-}
-
-@media (max-width: 480px) {
-    .card-container {
-        grid-template-columns: repeat(3, 1fr); 
-        aspect-ratio: 3 / 6; 
-        gap: 5px;
-    }
-
-    .card {
-        aspect-ratio: 3 / 4; 
-    }
-    .star3 {
-        margin-top: 25%;
-        margin-right: -40%;
-    }
-    .cards_game {
-        height: 200vw;
-    }
-}
-.timer {
-    position: absolute;
-    top: 1.6%;
-    font-size: 3.6vw;
-    font-weight: bold;
-    color: #E18989;
-    font-family: 'Overdoze_sans', sans-serif;
-}
 /* КОНЕЦ КАРТ */
 
  /* ХОЛСТ */  /* ХОЛСТ */   /* ХОЛСТ */   /* ХОЛСТ */ 
@@ -209,11 +599,10 @@ body {
     pointer-events: auto; 
 }
 
-
 .scissors {
     position: absolute;
     width: 24%;
-    left: -5%;
+    right: 80%;
     top: 70%;
     z-index: 2;
 }
@@ -223,35 +612,35 @@ body {
   }
 .yellow_pencil {
     position: absolute;
-    width: 30%;
+    width: 33%;
     top: 30%;
-    left: -16%;
+    right: 84%;
 }
 .threads_yellow {
     position: absolute;
     width: 10%;
     top: 28%;
-    left: -3.5%;
+    right: 94%;
     z-index: 2;
 }
 .threads_blue {
     width: 11%;
     position: absolute;
     top: 15%;
-    left: -2.5%;
+    right: 92%;
     z-index: 1;
 } 
 .cap {
     position: absolute;
     width: 35%;
     left: 11%;
-    top: -36%;
+    bottom: 73%;
 }
 .cat {
     position: absolute;
     width: 18%;
     left: 51%;
-    top: -8%;
+    bottom: 86%;
 }
 .green_pencil {
     position: absolute;
@@ -270,12 +659,11 @@ body {
     position: absolute;
     width: 30%;
     left: 73%;
-    top: -10%;
+    bottom: 79%;
 }
 .draggable {
     cursor: grab;
 }
-
 
 .color-button {
     position: absolute;
@@ -349,7 +737,6 @@ body {
     cursor: pointer;
     z-index: 5;
     border-radius: 1vw;
-    /* флексбок для размещения текста */
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -379,7 +766,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 14vw; 
-    height: vw; 
+    
     border-radius: 1vw; 
 }
 
@@ -401,8 +788,8 @@ body {
     position: relative;
     margin-top: 5%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Сетка 4x4 */
-    gap: 1vw; /* Отступы между ячейками */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1vw;
     width: 100vw; 
     max-width: 50vw; 
     background-color: #F28482;
@@ -413,8 +800,8 @@ body {
 /* Клетки */
 .tile {
     font-family: 'Bryndan_Write';
-    aspect-ratio: 1; /* Квадратная форма */
-    width: 100%; /* Тайлы занимают всю доступную ширину */
+    aspect-ratio: 1;
+    width: 100%;
     font-size: 5vw;
     font-weight: bold;
     display: flex;
@@ -473,7 +860,6 @@ body {
     .yellow_textile {
         position: absolute;
         width: 30%;
-        margin-top: 0%;
         margin-left: 81%;
      }
 
@@ -489,14 +875,14 @@ body {
     width: 26%;
     margin-top: 37.5%;
     left: 5%;
-    display: none; /* Изначально скрыто */
+    display: none; 
 }
 
 .scissors2 {
     width: 23%;
     position: absolute;
     margin-top: 37%;
-    left: -3%;
+    right: 80%;
 }
 .pallette {
     width: 25%;
@@ -516,73 +902,6 @@ body {
     position: absolute;
     opacity: 50%;
 }
-@media (max-width: 720px) {
-    #board {
-        margin-top: 0%;
-        max-width: 88vw;
-        z-index: 2;
-        padding: 1.5vw;
-        gap: 1.5vw; 
-    }
-    .cube_game {
-        justify-content: center;
-        height: 216vw;
-        overflow: hidden; 
-    }
-    .tile {
-        font-size: 12vw;
-    }
-    .reset-rectangle {
-        position: absolute; 
-        width: 150vw; 
-        height: 170vw; 
-        background-color: #F4C7C7; 
-        z-index: 1; 
-    }
-    .score-container {
-        font-family: 'Bryndan_Write';
-        font-size: 7vw;
-        margin-top: 9%;
-        width: 35vw; 
-        height: 10vw; 
-        border-radius: 2vw; 
-        
-    }
-    .yellow_textile {
-        transform: rotate(-10deg);
-        position: absolute;
-        width: 60%;
-        top: 4%;
-        margin-left: 81%;
-     }
-     .lightly_pink_textile {
-         position: absolute;
-         width: 65%;
-         margin-top: 147%;
-         left: -20%;
-     }
-     .scissors2 {
-         width: 55%;
-         position: absolute;
-         margin-top: 150%;
-         left: -10%;
-     }
-     .pallette {
-         width: 50%;
-         position: absolute;
-         top: 0%;
-         transform: rotate(-0deg);
-         left: 0%;
-     }
-     .pinl_textile {
-         width: 75%;
-         margin-top: 60%;
-         position: absolute;
-         left: 50%;
-         z-index: 0;
-     }
-}
-
 /* PSP */
 .ps_game {
     overflow: hidden;
@@ -591,7 +910,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 64vw;
+    height: 65vw;
     font-family: Arial, sans-serif;
 }
 
@@ -620,7 +939,7 @@ body {
     top: 40%;
 }
 #game-container {
-    margin-top: -1%;
+    margin-bottom: 1%;
     position: absolute;
     width: 60vw; 
     height: 35vw;
@@ -678,23 +997,23 @@ body {
 }
 .help-image {
     position: absolute;
-    display: none; /* Скрываем картинку по умолчанию */
+    display: none; 
     opacity: 0;
-    transition: opacity 0.5s ease-in-out; /* Плавный переход */
+    transition: opacity 0.5s ease-in-out; 
     width: 50%;
     top: 30%;
     left: 25%;
 }
 
 .help-image.show {
-    display: block; /* Показываем картинку */
-    opacity: 1; /* Делаем картинку видимой */
+    display: block; 
+    opacity: 1; 
 }
 
 .lightning, .lightning1 {
     position: absolute;
     width: 2%;
-    opacity: 0; /* По умолчанию скрыты */
+    opacity: 0; 
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -707,7 +1026,7 @@ body {
 .lightning1 {
     margin-top: 55%;
     left: 8%;
-    transform: rotate(-90deg); /* Начальный угол для второй молнии */
+    transform: rotate(-90deg);
 }
 
 .shake {
@@ -718,7 +1037,12 @@ body {
     animation: shake-rotated 0.2s infinite alternate;
 }
 
-
+.letters {
+    position: absolute;
+    width: 10%;
+    left: 81.5%;
+    top: 30%;
+}
 .headphones {
     position: absolute;
     width: 23%;
@@ -771,7 +1095,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 17vw;
-    height: vw; 
     border-radius: 1vw; 
     
 }
@@ -783,22 +1106,13 @@ body {
     z-index: 8;
     pointer-events: none
 }
-
-
-
-.menuska {
-    z-index: -1;
+.circle_buttom_ps img {
     width: 100%;
     position: absolute;
-    opacity: 0;
-}
-/* меню */
-.menu_screen {
-    position: relative;
-  display: flex;
-  display: flex;
-  flex-direction: column;
-  height: 65vw;
+    left: 0;
+    top: 0;
+    z-index: 8;
+    pointer-events: none
 }
 .color_button_ps {
     width: 4%;
@@ -814,444 +1128,11 @@ body {
     top: 65%;
     left: 11.2%;
 }
-.menu_container {
-    margin-top: 1.9%;
- line-height: 5%;
-padding-left: 2vw;
-padding-right: 2vw;
-  text-align: justify;
-  text-transform: uppercase;
-  font-family: "Futura_PT", sans-serif;
-}
-
-.letter {
-    line-height: 1;
-    font-size: 8vw;
-  cursor: pointer;
-  transition: color 0.15s ease-in-out, opacity 0.8s ease-in-out;
-}
-
-.circle_menu, .cube_menu, .star_menu, .triangle_menu,.triangle2_menu {
-    position: absolute;
-    width: 5%;
-    z-index: -1;
-    animation: rotateAnimation 10s linear infinite; /* Анимация вращения */
-}
-
-@keyframes rotateAnimation {
-    0% {
-        transform: rotate(0deg); 
-    }
-    100% {
-        transform: rotate(360deg); 
-    }
-}
-.star_menu {
-    top:10% ;
-    left: 4%;
-}
-.triangle2_menu{
-    left: 4%;
-    top:38% ;
-}
-.circle_menu {
-    left: 50%;
-    top:31% ;
-}
-.cube_menu {
-    left:43%;
-    top:8% ;
-}
-.triangle_menu {
-    left:72%;
-    top:17.4% ;
-    width: 4%;
-}
-.rectangles_menu {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5.2%;
-    padding-left: 2.6%;
-    padding-left: 2.6%;
-    margin-top: 1%;
-}
-.rectangle_menu1, .rectangle_menu2, .rectangle_menu3, .rectangle_menu4, .rectangle_menu5 {
-    width: 15vw;
-}
-.buttons_menu {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 5.2%;
-    padding-left: 2.6%;
-    padding-left: 2.6%;
-    margin-top: 1%;
-}
-.games_menu {
-    margin-left: 10%;
-}
-.games_menu{
-    margin-top: -5%;
-}
-/* Стиль для кнопок */
-.buttons_menu button {
-    width: 97%;
-    height: 97%;
-    font-size: 1.6vw;
-    padding: 5% 5%;
-    border-radius: 20px;
-    font-family: "Futura_PT", sans-serif;
-    background-color: #FBF6ED;
-    z-index: 1;
-}
-
-
-.button_2048 {
-    border: 2px solid;
-    grid-column: 1;
-    border-color: #F28482; 
-    color:#F28482 ;
-}
-
-.button_canvas {
-    border: 2px solid;
-    grid-column: 2;
-    margin-left: -2%;
-    border-color: #A3A54F;
-    color:#A3A54F ;
-
-}
-
-.button_catch_star {
-    border: 2px solid;
-    grid-column: 3;
-    margin-left: -5%;
-    border-color: #F8C4BB;
-    color: #F8C4BB;
-}
-
-.button_find_a_couple {
-    border: 2px solid;
-    grid-column: 4;
-    margin-left: -8%;
-    border-color: #84A59D; 
-    color: #84A59D;
-}
-
-.button_divination {
-    border: 2px solid;
-    grid-column: 5;
-    margin-left: -10%;
-    border-color: #F6BE61; 
-    color: #F6BE61;
-}
-
-.buttons_menu button a {
-    text-decoration: none; 
-    color: inherit; 
-}
-
-.cube_4 {
-    margin-top: -22%;
-    left: 2%;
-    width: 10%;
-}
-.cube_16 {
-    margin-top: -18%;
-    left: 9%;
-    width: 10%;
-}
-.cube_64 {
-    margin-top: -10%;
-    left: 8%;
-    width: 12%;
-} 
-.cube_128 {
-    margin-top: -13%;
-    left: 0%;
-    width: 11%;
-} 
-
-.first_game_cube:hover .cube_4,
-.first_game_cube:hover .cube_16,
-.first_game_cube:hover .cube_64,
-.first_game_cube:hover .cube_128 {
-    animation-play-state: running;
-}
-
-.cube_4, .cube_16, .cube_64, .cube_128 {
-    position: absolute;
-    animation-play-state: paused;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
-
-.cube_4 {
-    animation-name: sway4;
-}
-.cube_16 {
-    animation-name: sway16;
-}
-.cube_64 {
-    animation-name: sway64;
-}
-.cube_128 {
-    animation-name: sway128;
-}
-
-/* Разные вариации покачивания */
-@keyframes sway4 {
-    0% { transform: rotate(-5deg) translateX(-3px); }
-    50% { transform: rotate(3deg) translateX(2px); }
-    100% { transform: rotate(-5deg) translateX(-3px); }
-}
-
-@keyframes sway16 {
-    0% { transform: rotate(2deg) translateY(-3px); }
-    50% { transform: rotate(-2deg) translateY(3px); }
-    100% { transform: rotate(2deg) translateY(-3px); }
-}
-
-@keyframes sway64 {
-    0% { transform: rotate(-4deg) translateX(2px); }
-    50% { transform: rotate(5deg) translateX(-2px); }
-    100% { transform: rotate(-4deg) translateX(2px); }
-}
-
-@keyframes sway128 {
-    0% { transform: rotate(-3deg) translateY(2px); }
-    50% { transform: rotate(4deg) translateY(-2px); }
-    100% { transform: rotate(-3deg) translateY(2px); }
-}
-
-.first_game_cube:hover .cap_menu,
-.first_game_cube:hover .star_yellow1,
-.first_game_cube:hover .star_yellow2,
-.first_game_cube:hover .star_yellow3 {
-    animation-play-state: running;
-}
-
-/* Шапка */
-.cap_menu {
-    position: absolute;
-    width: 10%;
-    margin-top: -13.5%;
-    left: 45%;
-    animation: swayCap 1.8s ease-in-out infinite alternate;
-    animation-play-state: paused;
-}
-
-/* Звезды */
-.star_yellow1, .star_yellow2 , .star_yellow3 {
-    position: absolute;
-    width: 6%;
-    animation-duration: 2.5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-play-state: paused; /* По умолчанию анимация на паузе */
-}
-
-/* Разные движения для звезд */
-.star_yellow1 { animation-name: floatStar1; }
-.star_yellow2 { animation-name: floatStar2; }
-.star_yellow3 { animation-name: floatStar3; }
-
-/* Позиции */
-.star_yellow1 {
-    margin-top: -22%;
-    left: 47%;
-    z-index: 2;
-}
-
-.star_yellow2 {
-    margin-top: -18%;
-    left: 41%;
-    z-index: 2;
-}
-
-.star_yellow3 {
-    margin-top: -18%;
-    left: 52.2%;
-    z-index: 2;
-}
-
-/* Анимация для шапки (раскачивание) */
-@keyframes swayCap {
-    0% { transform: rotate(-5deg) translateX(-6px); }
-    50% { transform: rotate(4deg) translateX(5px); }
-    100% { transform: rotate(-3deg) translateX(-4px); }
-}
-
-/* Разные анимации для звезд (чтобы не выглядели одинаково) */
-@keyframes floatStar1 {
-    0% { transform: translateY(-6px) rotate(-2deg); }
-    50% { transform: translateY(5px) rotate(2deg); }
-    100% { transform: translateY(-6px) rotate(-2deg); }
-}
-
-@keyframes floatStar2 {
-    0% { transform: translateY(-3px) rotate(3deg); }
-    50% { transform: translateY(6px) rotate(-3deg); }
-    100% { transform: translateY(-3px) rotate(3deg); }
-}
-
-@keyframes floatStar3 {
-    0% { transform: translateY(-4px) rotate(-1deg); }
-    50% { transform: translateY(7px) rotate(1deg); }
-    100% { transform: translateY(-4px) rotate(-1deg); }
-}
-
-.palette_menu{
-    width: 20%;
-    position: absolute;
-    margin-top: -21%;
-    left: 20%;
-    animation: sway 2s ease-in-out infinite;
-    animation-play-state: paused; 
-}
-@keyframes sway {
-    0% { transform: rotate(-3deg); }
-    50% { transform: rotate(3deg); }
-    100% { transform: rotate(-3deg); }
-}
-
-/* Запуск анимации при наведении */
-.palette_menu:hover {
-    animation-play-state: running; 
-}
-
-
-
-.card_front_menu, .card_back_menu, .star_card_menu {
-    
-    position: absolute; 
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-}
-
-.card_front_menu {
-    left: 67%;
-    margin-top: -18%;
-    width: 14%;
-    z-index:2 ;
-    animation-name: shakeCard1; /* Анимация покачивания передней карты */
-}
-
-.card_back_menu {
-    left: 59%;
-    margin-top: -20%;
-    z-index:2 ;
-    width: 12%;
-    z-index:1 ;
-    animation-name: shakeCard2; /* Анимация покачивания задней карты */
-}
-
-.star_card_menu {
-    left: 58%;
-    margin-top: -23%;
-    width: 24%;
-    animation-name: rotateStar;
-    animation-duration: 15s;
-}
-
-@keyframes shakeCard1 {
-    0% { transform: rotate(-3deg); }
-    50% { transform: rotate(3deg); }
-    100% { transform: rotate(-3deg); }
-}
-
-@keyframes shakeCard2 {
-    0% { transform: rotate(3deg); }
-    50% { transform: rotate(-3deg); }
-    100% { transform: rotate(3deg); }
-}
-
-@keyframes rotateStar {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(180deg); }
-    100% { transform: rotate(360deg); }
-    
-}
-
-
-.hand_menu, .eye_menu, .moon_menu{
-    position: absolute;
-animation-duration: 2s;
-animation-timing-function: ease-in-out;
-animation-iteration-count: infinite;
-animation-play-state: paused;
-
-}
-
-.hand_menu, .eye_menu, .moon_menu {
-    position: absolute;
-    animation-duration: 1s; /* Уменьшена длительность анимации для более резкого эффекта */
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
-}
-
-.hand_menu {
-    left: 82.5%;
-    margin-top: -22%;
-    width: 17%;
-    z-index: 1;
-}
-
-.eye_menu {
-    left: 86.4%;
-    margin-top: -8.4%;
-    width: 8%;
-    z-index: 2;
-    animation-name: shakeEye;
-}
-
-.moon_menu {
-    left: 88.5%;
-    top: 74.5%;
-    width: 2%;
-    z-index: 3;
-    animation-name: moveMoon;
-}
-
-/* Анимация покачивания для глаза */
-@keyframes shakeEye {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(3deg); }
-    50% { transform: rotate(5deg); }
-    75% { transform: rotate(3deg); }
-    100% { transform: rotate(0deg); }
-}
-
-/* Анимация для движения луны (имитация зрачка) */
-@keyframes moveMoon {
-    0% { transform: translateX(0) translateY(0); }
-    20% { transform: translateX(3px) translateY(-2px); }
-    40% { transform: translateX(5px) translateY(5px); }
-    60% { transform: translateX(-5px) translateY(-3px); }
-    80% { transform: translateX(-3px) translateY(4px); }
-    100% { transform: translateX(0) translateY(0); }
-}
-
-
-.menu:hover .eye_menu,
-.menu:hover .moon_menu,
-.menu:hover .hand_menu {
-    animation-play-state: running;
-}
-
-/* Когда курсор уходит с элементов */
-.menu img {
-    animation-play-state: paused;
-}
-
+/* ГАДАНИЕ */
 .DIVINATION {
     overflow: hidden;
     width: 100vw;
-    height: 63vw;
+    height: 65vw;
     position: relative;
     display: flex;
     justify-content: center;
@@ -1261,7 +1142,7 @@ animation-play-state: paused;
 .table {
     position: absolute;
     margin-top: 29.1%;
-    width: 60%;
+    width: 63%;
     z-index: 1;
 }
 .box {
@@ -1318,7 +1199,41 @@ animation-play-state: paused;
 }
 .card1 {
     width: 8.6%;
-    margin-top: 27%;
+    margin-top: 25%;
     z-index: 2;
     pointer-events: none;
+}
+
+
+ /* .magic-spark {
+   position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #FFD700, transparent);
+   border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+     animation: fadeOut 0.5s ease-out; }
+ @keyframes fadeOut {
+     from { transform: scale(1); opacity: 1; }
+   to { transform: scale(2); opacity: 0; }
+}
+ */
+ body.pulse-effect {
+    animation: pulseAnimation 0.5s ease-out;
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    50% {
+        transform: scale(1.05); /* Увеличиваем размер */
+        background-color: rgba(255, 255, 255, 0.2); /* Легкое затемнение */
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgba(255, 255, 255, 0);
+    }
 }

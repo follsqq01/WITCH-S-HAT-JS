@@ -90,3 +90,33 @@ function observeSection(section) {
     }, { threshold: 0.5 });
     observer.observe(section);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("music");
+
+    function playMusic() {
+        if (music) {
+            music.volume = 0.5;
+            music.play()
+                .then(() => console.log("Музыка запущена"))
+                .catch(error => console.log("Автовоспроизведение заблокировано:", error));
+        }
+    }
+
+    // Включение музыки по клику (из-за блокировки браузером)
+    document.addEventListener("click", playMusic, { once: true });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const clickSound = document.getElementById("clickSound");
+    clickSound.volume = 0.3; // Громкость на 50%
+
+    document.querySelector(".buttons_menu").addEventListener("click", (event) => {
+        if (event.target.tagName === "BUTTON" || event.target.closest("button")) {
+            clickSound.currentTime = 0; // Чтобы звук проигрывался заново при каждом клике
+            clickSound.play().catch(error => console.log("Ошибка воспроизведения звука:", error));
+        }
+    });
+});
+

@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 score++;
                 scoreDisplay.textContent = `${score}/18`;
 
+     const tabSound = new Audio('audio/tab.mp3');
+     tabSound.play();
+
                 if (score >= 18) {
                     alert("Ты победил!");
                     clearInterval(gameInterval);
@@ -218,3 +221,53 @@ document.addEventListener("DOMContentLoaded", () => {
         helpImage.classList.toggle("show");
     });
 });
+
+
+const tabSound = document.getElementById('tabSound');
+
+
+
+
+// //след//
+// document.addEventListener("DOMContentLoaded", function () {
+//     const lettersImg = document.querySelector(".letters");
+//     if (lettersImg) {
+//         lettersImg.addEventListener("click", function (event) {
+//             createMagicTrail(event);
+//         });
+//     }
+// });
+
+// function createMagicTrail(event) {
+//     for (let i = 0; i < 10; i++) {
+//         setTimeout(() => {
+//             const spark = document.createElement("div");
+//             spark.className = "magic-spark";
+//             document.body.appendChild(spark);
+
+//             const x = event.clientX + (Math.random() - 0.5) * 50;
+//             const y = event.clientY + (Math.random() - 0.5) * 50;
+//             spark.style.left = `${x}px`;
+//             spark.style.top = `${y}px`;
+
+//             setTimeout(() => spark.remove(), 500);
+//         }, i * 50);
+//     }
+// }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const lettersImg = document.querySelector(".letters");
+    if (lettersImg) {
+        lettersImg.addEventListener("click", function () {
+            triggerPulseEffect();
+        });
+    }
+});
+
+function triggerPulseEffect() {
+    document.body.classList.add("pulse-effect");
+    setTimeout(() => {
+        document.body.classList.remove("pulse-effect");
+    }, 500); // Эффект длится 500ms
+}

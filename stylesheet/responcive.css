@@ -1,0 +1,142 @@
+
+
+
+
+
+@media (max-width: 768px) {
+    .star3 {
+        margin-top: 15%;
+        margin-right: -40%;
+    }
+    .card-container {
+        grid-template-columns: repeat(4, 1fr); 
+        aspect-ratio: 4 / 4; 
+        gap: 5px;
+    }
+    .game-container { 
+        height: 145vw;
+    }
+    .card {
+        aspect-ratio: 3 / 4.5;
+    }
+    .cards_game {
+        height: 145vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); 
+        aspect-ratio: 3 / 6; 
+        gap: 5px;
+    }
+
+    .card {
+        aspect-ratio: 3 / 4; 
+    }
+    .star3 {
+        margin-top: 25%;
+        margin-right: -40%;
+    }
+    .cards_game {
+        height: 200vw;
+    }
+}
+.timer {
+    position: absolute;
+    top: 1.6%;
+    font-size: 3.6vw;
+    font-weight: bold;
+    color: #E18989;
+    font-family: 'Overdoze_sans', sans-serif;
+}
+
+@media (max-width: 720px) {
+    #board {
+        margin-top: 0%;
+        max-width: 88vw;
+        z-index: 2;
+        padding: 1.5vw;
+        gap: 1.5vw; 
+    }
+    .cube_game {
+        justify-content: center;
+        height: 216vw;
+        overflow: hidden; 
+    }
+    .tile {
+        font-size: 12vw;
+    }
+    .reset-rectangle {
+        position: absolute; 
+        width: 150vw; 
+        height: 170vw; 
+        background-color: #F4C7C7; 
+        z-index: 1; 
+    }
+    .score-container {
+        font-family: 'Bryndan_Write';
+        font-size: 7vw;
+        margin-top: 9%;
+        width: 35vw; 
+        height: 10vw; 
+        border-radius: 2vw; 
+        
+    }
+    .yellow_textile {
+        transform: rotate(-10deg);
+        position: absolute;
+        width: 60%;
+        top: 4%;
+        margin-left: 81%;
+     }
+     .lightly_pink_textile {
+         position: absolute;
+         width: 65%;
+         margin-top: 147%;
+         left: -20%;
+     }
+     .scissors2 {
+         width: 50%;
+         position: absolute;
+         margin-top: 155%;
+         left: -10%;
+     }
+     .pallette {
+         width: 50%;
+         position: absolute;
+         top: 0%;
+         transform: rotate(-0deg);
+         left: 0%;
+     }
+     .pinl_textile {
+         width: 75%;
+         margin-top: 60%;
+         position: absolute;
+         left: 50%;
+         z-index: 0;
+     }
+}
+
+
+@media (max-width: 1920px) {
+    .ps_game{
+        margin-top: -5%;
+    }
+}
+    .headphones {
+        width: 22%;
+        margin-top: 4%;
+        margin-left: 3%;
+        z-index: -2;
+     }
+     .background-ps {
+        z-index: -3;
+     }
+
+     @media (max-width: 1440px) {
+        .ps_game{
+            height: 70vw;
+        }
+
+     }
