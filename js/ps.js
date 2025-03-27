@@ -88,11 +88,116 @@ document.addEventListener("DOMContentLoaded", () => {
     const notes = document.querySelectorAll(".note1, .note2, .note3");
     const lightning = document.querySelectorAll(".lightning, .lightning1");
 
-    // Функция для сброса состояния нот и начала их анимации
+   
     function resetNotes() {
         notes.forEach(note => {
-            note.style.opacity = "0"; // Скрываем ноты
-            note.classList.remove("float"); // Удаляем класс анимации
+            note.style.opacity = "0"; 
+            note.classList.remove("float"); document.addEventListener("DOMContentLoaded", () => {
+                const gameContainer = document.getElementById("game-container");
+                const hat = document.getElementById("blue_hat");
+                const scoreDisplay = document.getElementById("score1");
+            
+                let hatPosition = gameContainer.offsetWidth / 2 - hat.offsetWidth / 2;
+                let score = 0;
+                let gameInterval; // Переменная для хранения интервала игры
+            
+                hat.style.transform = "none";
+                hat.style.left = hatPosition + "px";
+            
+                // Проверяем ориентацию экрана и запускаем/останавливаем игру
+                function checkOrientation() {
+                    if (window.innerWidth > window.innerHeight) {
+                        // Если ориентация альбомная, запускаем игру
+                        if (!gameInterval) {
+                            gameInterval = setInterval(createStar, 1500); // Запускаем интервальную функцию для падения звезд
+                        }
+                    } else {
+                        // Если ориентация портретная, останавливаем игру
+                        clearInterval(gameInterval);
+                        gameInterval = null; // Останавливаем игру
+                        // Убираем все звезды с экрана
+                        const stars = document.querySelectorAll('.star');
+                        stars.forEach(star => star.remove());
+                    }
+                }
+            
+                // Запускаем проверку ориентации при загрузке страницы
+                checkOrientation();
+            
+                // Обработчик события на изменение размера экрана
+                window.addEventListener("resize", checkOrientation);
+            
+                function createStar() {
+                    if (score >= 18) return; // Проверяем, не достиг ли счёт 18
+            
+                    const star = document.createElement("img");
+                    star.classList.add("star");
+            
+                    star.src = "img/vector.svg";
+                    star.style.left = Math.random() * (gameContainer.offsetWidth - 30) + "px";
+                    star.style.top = "0px";
+                    gameContainer.appendChild(star);
+            
+                    const fallInterval = setInterval(() => {
+                        let starTop = parseFloat(star.style.top);
+                        let starLeft = parseFloat(star.style.left);
+                        let starWidth = star.offsetWidth;
+                        let starHeight = star.offsetHeight;
+            
+                        let hatLeft = parseFloat(hat.style.left);
+                        let hatTop = hat.offsetTop;
+                        let hatWidth = hat.offsetWidth;
+                        let hatHeight = hat.offsetHeight;
+            
+                        const padding = 15;
+            
+                        if (
+                            starTop + starHeight >= hatTop + padding &&
+                            starLeft + starWidth > hatLeft &&
+                            starLeft < hatLeft + hatWidth
+                        ) {
+                            clearInterval(fallInterval);
+                            star.remove();
+                            score++;
+                            scoreDisplay.textContent = `${score}/18`;
+            
+                            const tabSound = new Audio('audio/tab.mp3');
+                            tabSound.play();
+            
+                            if (score >= 18) {
+                                alert("Ты победил!");
+                                clearInterval(gameInterval);
+                                document.removeEventListener("keydown", moveHat);
+                                return;
+                            }
+                        }
+            
+                        if (starTop < gameContainer.offsetHeight - starHeight) {
+                            star.style.top = starTop + 10 + "px";
+                        } else {
+                            clearInterval(fallInterval);
+                            star.remove();
+                        }
+                    }, 50);
+                }
+            
+                // Функция для управления движением шляпы
+                function moveHat(event) {
+                    const step = 30;
+                    const minLeft = 0;
+                    const maxRight = gameContainer.offsetWidth - hat.offsetWidth;
+            
+                    if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+                        hatPosition = Math.max(minLeft, hatPosition - step);
+                    } else if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+                        hatPosition = Math.min(maxRight, hatPosition + step);
+                    }
+                    hat.style.left = hatPosition + "px";
+                }
+            
+                document.addEventListener("keydown", moveHat);
+            });
+            
         });
     }
 
@@ -269,5 +374,5 @@ function triggerPulseEffect() {
     document.body.classList.add("pulse-effect");
     setTimeout(() => {
         document.body.classList.remove("pulse-effect");
-    }, 500); // Эффект длится 500ms
+    }, 500); 
 }

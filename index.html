@@ -1,252 +1,375 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Карточная игра "Найди пару"</title>
-    <link rel="stylesheet" href="stylesheet/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <section class="menu_screen">
+      <div class="menu_container" id="menu_text"></div>
+      <div class="figures">
+        <img class="circle_menu" src="img/circle_menu.svg" />
+        <img class="cube_menu" src="img/cube_menu.svg" />
+        <img class="star_menu" src="img/star_menu.svg" />
+        <img class="triangle_menu" src="img/triangle_menu.svg" />
+        <img class="triangle2_menu" src="img/triangle2_menu.svg" />
+      </div>
 
-<section class="menu_screen">
-    <div class="menu_container" id="menu_text"></div>
-  <div class="figures">
-    <img class="circle_menu" src="img/circle_menu.svg">
-    <img class="cube_menu" src="img/cube_menu.svg">
-    <img class="star_menu" src="img/star_menu.svg">
-    <img class="triangle_menu" src="img/triangle_menu.svg">
-    <img class="triangle2_menu" src="img/triangle2_menu.svg">
-</div>
-    <div class="rectangles_menu">
+      <div class="menu">
+        <div class="menu-item">
+          <div class="first_game_cube">
+            <img class="cube_16" src="img/cube_16.svg" />
+            <img class="cube_4" src="img/cube_4.svg" />
+            <img class="cube_128" src="img/cube_128.svg" />
+            <img class="cube_64" src="img/cube_64.svg" />
+          </div>
+
+          <button class="button_2048"><a href="#2048_game">2048</a></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="second_game_canvas">
+            <img class="palette_menu" src="img/palette_menu.svg" />
+          </div>
+          <button class="button_canvas">
+            <a href="#drawing_game">CANVAS</a>
+          </button>
+        </div>
+
+        <div class="menu-item">
+          <div class="third_game_cap">
+            <img class="cap_menu" src="img/blue_cap.svg" />
+            <img class="star_yellow1" src="img/star_yellow.svg" />
+            <img class="star_yellow2" src="img/star_yellow.svg" />
+            <img class="star_yellow3" src="img/star_yellow.svg" />
+          </div>
+          <button class="button_catch_star">
+            <a href="#ps_game">CATCH A STAR</a>
+          </button>
+        </div>
+
+        <div class="menu-item">
+          <div class="fouth_game_card">
+            <img class="card_front_menu" src="img/card_front_menu_.svg" />
+            <img class="card_back_menu" src="img/card_back_menu.svg" />
+            <img class="star_card_menu" src="img/star_card_menu.svg" />
+          </div>
+          <button class="button_find_a_couple">
+            <a href="#cards_game">FIND A COUPLE</a>
+          </button>
+        </div>
+
+        <div class="menu-item">
+          <div class="fifth_game_card">
+            <img class="hand_menu" src="img/hand_menu.svg" alt="Hand" />
+            <img class="eye_menu" src="img/eye_menu.svg" alt="Eye" />
+            <img class="moon_menu" src="img/moon_menu.svg" alt="Moon" />
+          </div>
+
+          <button class="button_divination">
+            <a href="#divination_game">DIVINATION</a>
+          </button>
+        </div>
+      </div>
+      <!-- <div class="rectangles_menu">
         <img class="rectangle_menu1" src="img/rectangle_menu1.svg">
         <img class="rectangle_menu2" src="img/rectangle_menu2.svg">
         <img class="rectangle_menu3" src="img/rectangle_menu3.svg">
         <img class="rectangle_menu4" src="img/rectangle_menu4.svg">
         <img class="rectangle_menu5" src="img/rectangle_menu5.svg">
-    </div>
+    </div> -->
+    </section>
 
-<div class="buttons_menu">
-    <button class="button_2048"><a href="#2048_game">2048</a>
-    <button class="button_canvas"><a href="#drawing_game">CANVAS</a>
-    <button class="button_catch_star"><a href="#ps_game">CATCH A STAR</a>
-    <button class="button_find_a_couple">  <a href="#cards_game">FIND A COUPLE</a>
-    <button class="button_divination"><a href="#divination_game">DIVINATION</a>
-</div>
-    <div class="games_menu">
-        <div class="first_game_cube">
-            <img class="cube_16" src="img/cube_16.svg">
-            <img class="cube_4" src="img/cube_4.svg">
-            <img class="cube_128" src="img/cube_128.svg">
-            <img class="cube_64" src="img/cube_64.svg">
+    <section id="cards_game" class="cards_game">
+      <div class="card-container">
+        <!-- Карточки, каждая с фиксированной шириной и высотой -->
+        <div class="card" data-id="1">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card1.svg')"
+          ></div>
         </div>
-        
-        <div class="second_game_canvas">
-            <img class="palette_menu" src="img/palette_menu.svg">
+        <div class="card" data-id="1">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card1.svg')"
+          ></div>
         </div>
+        <div class="card" data-id="2">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card2.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="2">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card2.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="3">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card3.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="3">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card3.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="4">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card4.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="4">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card4.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="5">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card5.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="5">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card5.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="6">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card6.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="6">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card6.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="7">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card7.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="7">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card7.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="8">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card8.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="8">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card8.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="9">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card9.svg')"
+          ></div>
+        </div>
+        <div class="card" data-id="9">
+          <div
+            class="card-front"
+            style="background-image: url('img/back_side.svg')"
+          ></div>
+          <div
+            class="card-back"
+            style="background-image: url('img/card9.svg')"
+          ></div>
+        </div>
+      </div>
 
-        <div class="third_game_cap">
-            <img class="cap_menu" src="img/blue_cap.svg">
-            <img class="star_yellow1" src="img/star_yellow.svg">
-            <img class="star_yellow2" src="img/star_yellow.svg">
-            <img class="star_yellow3" src="img/star_yellow.svg">
-        </div>
-
-        <div class="fouth_game_card">
-            <img class="card_front_menu" src="img/card_front_menu_.svg">
-            <img class="card_back_menu" src="img/card_back_menu.svg">
-            <img class="star_card_menu" src="img/star_card_menu.svg">
-            
-        </div>
-
-        <div class="fifth_game_card">
-            <img class="hand_menu" src="img/hand_menu.svg" alt="Hand">
-          <img class="eye_menu" src="img/eye_menu.svg" alt="Eye">
-          <img class="moon_menu" src="img/moon_menu.svg" alt="Moon">
-        </div>
-    </div>
-</section>
-
-
-<section id="cards_game" class="cards_game">
-        <div class="card-container">
-            <!-- Карточки, каждая с фиксированной шириной и высотой -->
-            <div class="card" data-id="1">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card1.svg');"></div>
-            </div>
-            <div class="card" data-id="1">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card1.svg');"></div>
-            </div>
-            <div class="card" data-id="2">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card2.svg');"></div>
-            </div>
-            <div class="card" data-id="2">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card2.svg');"></div>
-            </div>
-            <div class="card" data-id="3">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card3.svg');"></div>
-            </div>
-            <div class="card" data-id="3">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card3.svg');"></div>
-            </div>
-            <div class="card" data-id="4">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card4.svg');"></div>
-            </div>
-            <div class="card" data-id="4">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card4.svg');"></div>
-            </div>
-            <div class="card" data-id="5">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card5.svg');"></div>
-            </div>
-            <div class="card" data-id="5">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card5.svg');"></div>
-            </div>
-            <div class="card" data-id="6">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card6.svg');"></div>
-            </div>
-            <div class="card" data-id="6">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card6.svg');"></div>
-            </div>
-            <div class="card" data-id="7">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card7.svg');"></div>
-            </div>
-            <div class="card" data-id="7">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card7.svg');"></div>
-            </div>
-            <div class="card" data-id="8">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card8.svg');"></div>
-            </div>
-            <div class="card" data-id="8">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card8.svg');"></div>
-            </div>
-            <div class="card" data-id="9">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card9.svg');"></div>
-            </div>
-            <div class="card" data-id="9">
-                <div class="card-front" style="background-image: url('img/back_side.svg');"></div>
-                <div class="card-back" style="background-image: url('img/card9.svg');"></div>
-            </div>
-        </div>
-
-        <div class="stars">
-            <img class="star1" src="img/star1.svg">
-            <img class="star2" src="img/star2.svg">
-            <img class="star3" src="img/star3.svg">
-            <img class="star4" src="img/star4.svg">
-        </div>
-        <div class="timer">
-         <span id="timer">01:00</span>
-        </div>
+      <div class="stars">
+        <img class="star1" src="img/star1.svg" />
+        <img class="star2" src="img/star2.svg" />
+        <img class="star3" src="img/star3.svg" />
+        <img class="star4" src="img/star4.svg" />
+      </div>
+      <div class="timer">
+        <span id="timer">01:00</span>
+      </div>
     </section>
 
     <section class="drawing_game" id="drawing_game">
-        </div>
-        <div class="canvas-container">
-            <img class="canvas1" src="img/canvas1.svg" alt="Background Image">
-            <canvas id="drawingCanvas"></canvas>
-        </div>
-        <img class="scissors draggable" src="img/scissors.svg">
-        <img class="yellow_pencil draggable" src="img/yellow_pencil.svg">
-        <img class="threads_yellow" src="img/threads_yellow.svg">
-        <img class="threads_blue" src="img/threads_blue.svg">
-        <img class="cap draggable" src="img/cap.svg">
-        <img class="cat draggable" src="img/cat.svg">
-        <img class="green_pencil draggable" src="img/green_pencil.svg">
-        <img class="blue_pencil draggable" src="img/blue_pencil.svg">
-        <img class="feather draggable" src="img/feather.svg">
-        <img class="back" src="img/canvas_back.svg">
-        <button id="colorButton" class="color-button"></button>
-        <button id="colorButton1" class="color-button1"></button>
-        <button id="colorButton2" class="color-button2"></button>
-        <button id="colorButton3" class="color-button3"></button>
-        <div class="reset-button" onclick="resetCanvas()">
-            <div class="reset-rectangle"></div>
-            <span class="reset-text">RESET</span>
-        </div>
-   </section>
+      <section class="rotate_screen">
+        <img class="rotate_img" src="img/rotate.svg" />
+        <p>Please rotate your screen<br />to landscape orientation</p>
+      </section>
+      <div class="canvas-container">
+        <img class="canvas1" src="img/canvas1.svg" alt="Background Image" />
+        <canvas id="drawingCanvas"></canvas>
+      </div>
+      <img class="scissors draggable" src="img/scissors.svg" />
+      <img class="yellow_pencil draggable" src="img/yellow_pencil.svg" />
+      <img class="threads_yellow" src="img/threads_yellow.svg" />
+      <img class="threads_blue" src="img/threads_blue.svg" />
+      <img class="cap draggable" src="img/cap.svg" />
+      <img class="cat draggable" src="img/cat.svg" />
+      <img class="green_pencil draggable" src="img/green_pencil.svg" />
+      <img class="blue_pencil draggable" src="img/blue_pencil.svg" />
+      <img class="feather draggable" src="img/feather.svg" />
+      <img class="back" src="img/canvas_back.svg" />
+      <button id="colorButton" class="color-button"></button>
+      <button id="colorButton1" class="color-button1"></button>
+      <button id="colorButton2" class="color-button2"></button>
+      <button id="colorButton3" class="color-button3"></button>
+      <div class="reset-button" onclick="resetCanvas()">
+        <div class="reset-rectangle"></div>
+        <span class="reset-text">RESET</span>
+      </div>
+    </section>
 
+    <section class="cube_game" id="2048_game">
+      <div id="board"></div>
+      <h2 class="score-container">Score: <span id="score">0</span></h2>
+      <img class="yellow_textile" src="img/yellow_textile2.svg" />
+      <img class="lightly_pink_textile" src="img/light_pink_textile.svg" />
+      <img class="lightly_pink_textile1" src="img/light_pink_textile1.svg" />
+      <img class="scissors2" src="img/scissors.svg" />
+      <img class="pallette" src="img/pallette2.svg" />
+      <img class="pinl_textile" src="img/pink_textile.svg" />
+    </section>
 
-  <section class="cube_game" id="2048_game"> 
-     <div id="board"></div>
-     <h2 class="score-container">
-         Score: <span id="score">0</span>
-     </h2>
-    <img class="yellow_textile" src="img/yellow_textile2.svg">
-    <img class="lightly_pink_textile" src="img/light_pink_textile.svg">
-    <img class="lightly_pink_textile1" src="img/light_pink_textile1.svg">
-    <img class="scissors2" src="img/scissors.svg">
-    <img class="pallette" src="img/pallette2.svg">
-    <img class="pinl_textile" src="img/pink_textile.svg">
-   </section>
-
-
-   <section class="ps_game" id="ps_game">
-    <h2 class="score-container2">
-        Score: <span id="score1">0/18</span>
-    </h2>
-    <div id="game-container">
-        <img id="blue_hat" src="img/blue_cap.svg">
-    </div>
-    <img class="ps4" src="img/ps4.svg"> 
-    <img class="headphones" src="img/headphones.svg">
-    <img class="charger" src="img/charger.svg">
-    <img class="background-ps" src="img/background-ps.svg">
-    <img class="lightning" src="img/lightning.svg">
-    <img class="lightning1" src="img/lightning.svg">
-    <img class="note1" src="img/note1.png">
-    <img class="note2" src="img/note2.svg">
-    <img class="note3" src="img/note3.svg">
-    <div class="buttons_ps">
-        <img class="circle_buttom_ps" src="img/circle_buttom_ps.svg">
-        <img class="color_button_ps" src="img/color_button_ps.svg">
-        <img class="help__button_ps" src="img/help_button.svg">
-        <img id="helpImage" src="img/instructions.svg" class="help-image">
-    </div>
-    <div class="arrows">
-        <img class="arrow1_ps" src="img/arrow_ps.svg">
-        <img class="arrow2_ps" src="img/arrow_ps.svg">
-        <img class="arrow3_ps" src="img/arrow_ps.svg">
-        <img class="arrow4_ps" src="img/arrow_ps.svg">
-    </div>
-    <img class="letters" src="img/letters.svg">
-   </section>
-   <section class="DIVINATION" id="divination_game">
-    <img class="table" src="img/table.svg">
-    <img class="box" src="img/box.svg">
-    <img class="curtains" src="img/curtains.svg">
-    <img class="signboard" src="img/signboard.svg">
-    <img class="fire1" src="img/fire1.svg">
-    <img class="fire2" src="img/fire2.svg">
-    <img class="plane" src="img/plane.png">
-    <img class="card1" src="img/1.svg">
-    <!-- <img class="card2" src="img/2.svg">
+    <section class="ps_game" id="ps_game">
+      <section class="rotate_screen">
+        <img class="rotate_img" src="img/rotate.svg" />
+        <p>Please rotate your screen<br />to landscape orientation</p>
+      </section>
+      <h2 class="score-container2">Score: <span id="score1">0/18</span></h2>
+      <div id="game-container">
+        <img id="blue_hat" src="img/blue_cap.svg" />
+      </div>
+      <img class="ps4" src="img/ps4.svg" />
+      <img class="headphones" src="img/headphones.svg" />
+      <img class="charger" src="img/charger.svg" />
+      <img class="background-ps" src="img/background-ps.svg" />
+      <img class="lightning" src="img/lightning.svg" />
+      <img class="lightning1" src="img/lightning.svg" />
+      <img class="note1" src="img/note1.png" />
+      <img class="note2" src="img/note2.svg" />
+      <img class="note3" src="img/note3.svg" />
+      <div class="buttons_ps">
+        <img class="circle_buttom_ps" src="img/circle_buttom_ps.svg" />
+        <img class="color_button_ps" src="img/color_button_ps.svg" />
+        <img class="help__button_ps" src="img/help_button.svg" />
+        <img id="helpImage" src="img/instructions.svg" class="help-image" />
+      </div>
+      <div class="arrows">
+        <img class="arrow1_ps" src="img/arrow_ps.svg" />
+        <img class="arrow2_ps" src="img/arrow_ps.svg" />
+        <img class="arrow3_ps" src="img/arrow_ps.svg" />
+        <img class="arrow4_ps" src="img/arrow_ps.svg" />
+      </div>
+      <img class="letters" src="img/letters.svg" />
+    </section>
+    <section class="DIVINATION" id="divination_game">
+      <img class="table" src="img/table.svg" />
+      <img class="box" src="img/box.svg" />
+      <img class="curtains" src="img/curtains.svg" />
+      <img class="signboard" src="img/signboard.svg" />
+      <img class="fire1" src="img/fire1.svg" />
+      <img class="fire2" src="img/fire2.svg" />
+      <img class="plane" src="img/plane.png" />
+      <img class="card1" src="img/1.svg" />
+      <!-- <img class="card2" src="img/2.svg">
     <img class="card3" src="img/3.svg">
     <img class="card4" src="img/4.svg">
     <img class="card5" src="img/5.svg">
     <img class="card6" src="img/6.svg">
     <img class="card7" src="img/7.svg"> -->
-   </section>
-   
-   <audio id="music" src="audio/Whispered_Wonders.mp3" loop></audio>
-   <audio id="clickSound" src="audio/magic_click.mp3"></audio>
-   <audio id="tabSound" src="audio/tab.mp3"></audio>
+    </section>
+    <audio id="music" src="audio/Whispered_Wonders.mp3" loop></audio>
+    <audio id="clickSound" src="audio/magic_click.mp3"></audio>
+    <audio id="tabSound" src="audio/tab.mp3"></audio>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="js/cards.js"></script>
@@ -256,7 +379,5 @@
     <script src="js/loading_page.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/divination.js"></script>
-</body>
-</html>
-</body>
+  </body>
 </html>
