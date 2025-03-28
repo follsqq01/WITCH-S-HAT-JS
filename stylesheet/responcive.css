@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .charger {
     width: 26%;
   }
@@ -6,41 +6,12 @@
     margin-top: 15%;
     margin-right: -40%;
   }
-  .card-container {
-    grid-template-columns: repeat(4, 1fr);
-    aspect-ratio: 4 / 4;
-    gap: 5px;
-    margin-top: 5%;
-  }
-  .game-container {
-    height: 145vw;
-  }
-  .card {
-    aspect-ratio: 3 / 4.5;
-  }
-  .cards_game {
-    height: 145vw;
-  }
-  .timer {
-    font-size: 5vw;
-  }
   .menu-item button {
     height: 15%;
-    font-size: 3vw;
   }
 }
 
 @media (max-width: 480px) {
-  .card-container {
-    grid-template-columns: repeat(3, 1fr);
-    aspect-ratio: 3 / 6;
-    gap: 5px;
-    margin-top: 8%;
-  }
-
-  .card {
-    aspect-ratio: 3 / 4;
-  }
   .star3 {
     margin-top: 25%;
     margin-right: -40%;
@@ -49,7 +20,7 @@
     height: 200vw;
   }
   .timer {
-    font-size: 7vw;
+    font-size: 6vw;
   }
 }
 
@@ -63,7 +34,7 @@
   }
   .cube_game {
     justify-content: center;
-    height: 216vw;
+    height: 100vw;
     overflow: hidden;
   }
   .tile {
@@ -118,7 +89,34 @@
     z-index: 0;
   }
 }
-@media (max-width: 1520px) {
+@media (max-width: 1366px) {
+  .menu_container {
+    margin-top: 2%;
+  }
+
+  .letter {
+    font-size: 7vw;
+    line-height: 1.1;
+  }
+  .cube_game {
+    height: 65vw;
+  }
+  #board {
+    margin-top: 5%;
+    max-width: 46vw;
+  }
+}
+@media (max-width: 1680px) {
+  .menu_container {
+    margin-top: 1%;
+  }
+
+  .letter {
+    font-size: 7.5vw;
+    line-height: 1;
+  }
+}
+/* @media (max-width: 1520px) {
   .ps_game {
     height: 70vw;
   }
@@ -159,84 +157,197 @@
   .note3 {
     margin-top: 5%;
   }
-}
+} */
 @media (max-width: 1280px) {
   .ps_game {
-    margin-top: -3%;
-    height: 73.5vw;
+    height: 75vw;
   }
   .background-ps {
-    width: 150vw;
+    width: 152vw;
   }
   .charger {
     width: 26%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .ps_game {
-    margin-top: -5%;
-    height: 102vw;
-  }
-  .arrow1_ps,
-  .arrow2_ps,
-  .arrow3_ps,
-  .arrow4_ps {
-    margin-top: 1%;
-  }
-  .letters {
-    top: 32%;
-  }
-  .charger {
-    width: 35%;
-  }
-  .headphones {
-    width: 30%;
-    margin-left: 2%;
-  }
-}
-
-@media (max-width: 865px) {
-  .arrow1_ps,
-  .arrow2_ps,
-  .arrow3_ps,
-  .arrow4_ps {
-    margin-top: 4%;
-  }
-  .letters {
-    margin-top: 4%;
-  }
-  .arrow4_ps {
-    margin-top: 3%;
-  }
-  .help__button_ps,
-  .color_button_ps {
-    margin-top: -4%;
-  }
-  .arrow2_ps {
-    margin-top: 5%;
-  }
-  .ps4 {
-    top: 31.2%;
-  }
-  .ps_game {
-    height: 103vw;
-  }
-  .background-ps {
-    width: 180vw;
-  }
-  .charger {
-    width: 30%;
-    margin-top: 3%;
-  }
-  .headphones {
-    width: 26%;
-    margin-left: -2%;
-    margin-top: 11%;
-  }
-  #game-container {
-    width: 62%;
   }
   .drawing_game {
+    height: 75vw;
+  }
+  .canvas-container {
+    margin-top: 10%;
+  }
+  .button-container {
+    margin-top: 59%;
+  }
+}
+
+@media (max-aspect-ratio: 9/16) {
+  .canvas-container {
+    width: 95%;
+    height: 50vh;
+  }
+
+  .drawing_game {
+    justify-content: flex-start;
+    padding-top: 5vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .menu-item {
+    width: 35%;
+    height: 61vw;
+    gap: 3vw;
+    padding-left: 3%;
+  }
+
+  .letter {
+    font-size: 12.5vw;
+  }
+  .menu_container {
+    text-align: center; /* Центрирование текста */
+  }
+  #board {
+    margin-top: 0%;
+    max-width: 88vw;
+    z-index: 2;
+    padding: 1.5vw;
+    gap: 1.5vw;
+  }
+  .cube_game {
+    justify-content: center;
+    height: 216vw;
+    overflow: hidden;
+  }
+  .tile {
+    font-size: 12vw;
+  }
+  .reset-rectangle {
+    position: absolute;
+    width: 150vw;
+    height: 170vw;
+    background-color: #f4c7c7;
+    z-index: 1;
+  }
+  .score-container {
+    font-family: "Bryndan_Write";
+    font-size: 7vw;
+    margin-top: 9%;
+    width: 35vw;
+    height: 10vw;
+    border-radius: 2vw;
+  }
+  .yellow_textile {
+    position: absolute;
+    width: 50%;
+    top: 0%;
+    margin-left: 49%;
+  }
+  .lightly_pink_textile {
+    position: absolute;
+    width: 65%;
+    margin-top: 147%;
+    left: -20%;
+  }
+  .scissors2 {
+    width: 50%;
+    position: absolute;
+    margin-top: 155%;
+    left: -10%;
+  }
+  .pallette {
+    width: 50%;
+    position: absolute;
+    top: 0%;
+    transform: rotate(-0deg);
+    left: 0%;
+  }
+  .pinl_textile {
+    width: 50%;
+    margin-top: 112%;
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+  }
+  .cards_game {
+    height: 250vw;
+  }
+  .timer {
+    font-size: 5.3vw;
+  }
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    aspect-ratio: 3 / 4.7;
+    gap: 1vw;
+    margin-top: 8%;
+  }
+  /* //гадание */
+  .DIVINATION {
+    height: 179vw;
+  }
+  .scene {
+    width: 200vw;
+    height: 50vw;
+    margin-top: 59%;
+    transform: scale(2); /* Увеличиваем в 2 раза */
+  }
+
+  .signboard {
+    top: 5%;
+    transform: scale(2.5); /* Увеличиваем в 2 раза */
+  }
+  .curtains {
+    display: none; /* Скрываем обычную версию на маленьких экранах */
+  }
+  .curtains2 {
+    display: block; /* Показываем адаптивную версию */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cube_game {
+    height: 210vw;
+    justify-content: center;
+  }
+  .yellow_textile {
+    width: 55%;
+    top: 0%;
+    right: 0%;
+  }
+  .pinl_textile {
+    width: 40%;
+    left: 60%;
+    top: 148.2%;
+  }
+  .pallette {
+    width: 45%;
+    top: 0%;
+    left: 0%;
+  }
+  .scissors2 {
+    width: 45%;
+    right: 60%;
+    top: 150%;
+  }
+  .lightly_pink_textile {
+    width: 55%;
+    left: 0%;
+    top: 152.1%;
+  }
+  #board {
+    margin-top: 0%;
+    max-width: 80vw;
+    z-index: 2;
+    padding: 1.5vw;
+    gap: 1.5vw;
+  }
+  .score-container {
+    font-size: 4vw;
+    width: 20vw;
+  }
+  .tile {
+    font-size: 8vw;
   }
 }

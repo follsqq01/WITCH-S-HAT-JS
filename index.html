@@ -287,31 +287,30 @@
       <div class="canvas-container">
         <img class="canvas1" src="img/canvas1.svg" alt="Background Image" />
         <canvas id="drawingCanvas"></canvas>
+        <img class="back" src="img/canvas_back.svg" />
       </div>
       <img class="scissors draggable" src="img/scissors.svg" />
-      <img class="yellow_pencil draggable" src="img/yellow_pencil.svg" />
       <img class="threads_yellow" src="img/threads_yellow.svg" />
       <img class="threads_blue" src="img/threads_blue.svg" />
       <img class="cap draggable" src="img/cap.svg" />
       <img class="cat draggable" src="img/cat.svg" />
       <img class="green_pencil draggable" src="img/green_pencil.svg" />
+      <img class="yellow_pencil draggable" src="img/yellow_pencil.svg" />
       <img class="blue_pencil draggable" src="img/blue_pencil.svg" />
       <img class="feather draggable" src="img/feather.svg" />
-      <img class="back" src="img/canvas_back.svg" />
-      <button id="colorButton" class="color-button"></button>
-      <button id="colorButton1" class="color-button1"></button>
-      <button id="colorButton2" class="color-button2"></button>
-      <button id="colorButton3" class="color-button3"></button>
-      <div class="reset-button" onclick="resetCanvas()">
-        <div class="reset-rectangle"></div>
-        <span class="reset-text">RESET</span>
+      <div class="button-container">
+        <button id="colorButton" class="color-button"></button>
+        <button id="colorButton1" class="color-button"></button>
+        <button id="colorButton2" class="color-button"></button>
+        <button id="colorButton3" class="color-button"></button>
+        <button class="reset-button" onclick="resetCanvas()">RESET</button>
       </div>
     </section>
 
     <section class="cube_game" id="2048_game">
       <div id="board"></div>
       <h2 class="score-container">Score: <span id="score">0</span></h2>
-      <img class="yellow_textile" src="img/yellow_textile2.svg" />
+      <img class="yellow_textile" src="img/yellow_textile.svg" />
       <img class="lightly_pink_textile" src="img/light_pink_textile.svg" />
       <img class="lightly_pink_textile1" src="img/light_pink_textile1.svg" />
       <img class="scissors2" src="img/scissors.svg" />
@@ -352,14 +351,20 @@
       <img class="letters" src="img/letters.svg" />
     </section>
     <section class="DIVINATION" id="divination_game">
-      <img class="table" src="img/table.svg" />
-      <img class="box" src="img/box.svg" />
+      <div class="scene">
+        <img class="table" src="img/table.svg" />
+        <div class="box_items">
+          <img class="box" src="img/box.svg" />
+          <img class="plane" src="img/plane.png" />
+          <img class="card1" src="img/1.svg" />
+        </div>
+        <img class="fire1" src="img/fire1.svg" />
+        <img class="fire2" src="img/fire2.svg" />
+      </div>
       <img class="curtains" src="img/curtains.svg" />
+      <img class="curtains2" src="img/curtains2.svg" />
       <img class="signboard" src="img/signboard.svg" />
-      <img class="fire1" src="img/fire1.svg" />
-      <img class="fire2" src="img/fire2.svg" />
-      <img class="plane" src="img/plane.png" />
-      <img class="card1" src="img/1.svg" />
+
       <!-- <img class="card2" src="img/2.svg">
     <img class="card3" src="img/3.svg">
     <img class="card4" src="img/4.svg">

@@ -27,10 +27,10 @@ body {
   display: flex;
   display: flex;
   flex-direction: column;
-  height: 65vw;
+  height: 68vw;
 }
 .menu_container {
-  margin-top: 1.9%;
+  margin-top: 0.5%;
   line-height: 5%;
   padding-left: 2vw;
   padding-right: 2vw;
@@ -541,19 +541,19 @@ body {
   padding: 10px;
   gap: 5vw;
   background-color: #fbf6ed;
-  height: 95vw;
+  height: 75vw;
   position: relative;
   overflow: hidden;
 }
 
 .card-container {
+  max-width: 90%;
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 5px;
   margin-top: 4%;
   width: 72%;
-  height: auto;
 }
 .card {
   position: relative;
@@ -596,13 +596,13 @@ body {
   position: absolute;
   width: 12%;
   left: 0%;
-  top: 50%;
+  top: 40%;
 }
 .star2 {
   position: absolute;
   width: 20%;
   right: 89%;
-  top: 66%;
+  top: 55%;
 }
 .star3 {
   position: absolute;
@@ -626,7 +626,7 @@ body {
 }
 .timer {
   position: absolute;
-  top: 1.6%;
+  top: 2%;
   font-size: 3vw;
   font-weight: bold;
   color: #e18989;
@@ -654,35 +654,41 @@ body {
 }
 
 .canvas-container {
+  margin-top: 7%;
   position: relative;
-  margin-top: 10%;
+  display: flex;
   height: 100%;
   width: 72%;
   aspect-ratio: 16 / 9;
   overflow-x: hidden;
 }
 
-.canvas1,
-#drawingCanvas {
+.canvas1 {
   position: absolute;
-  left: 1%;
-  width: 98%;
+  left: 3%;
+  width: 94%;
+  margin-top: 6%;
   border-radius: 2%;
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none; /* Фон не мешает взаимодействию с холстом */
+}
+
+#drawingCanvas {
+  position: absolute;
+  width: 94%;
+  margin-top: 6%;
+  left: 3%;
+  border-radius: 2%;
+  z-index: 2;
   cursor: url(../img/brush_cursor.svg) 10 50, auto !important;
+  pointer-events: auto;
 }
 
 .back {
   position: absolute;
-  width: 75.5%;
-  margin-top: 5.2%;
+  width: 100%;
   z-index: 0;
   pointer-events: none;
-}
-
-#drawingCanvas {
-  pointer-events: auto;
 }
 
 .scissors {
@@ -699,8 +705,8 @@ body {
 .yellow_pencil {
   position: absolute;
   width: 33%;
-  margin-top: 20%;
-  maright: 84%;
+  margin-top: 18%;
+  right: 85%;
 }
 .threads_yellow {
   position: absolute;
@@ -751,93 +757,55 @@ body {
   cursor: grab;
 }
 
-.color-button {
+.button-container {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw; /* Отступы между элементами */
+  margin-top: 56%;
+}
+
+.color-button {
   background-color: #e18989;
   border: none;
   border-radius: 50%;
-  width: 6%;
-  height: 9.3%;
-  margin-top: 56%;
-  left: 30.2%;
-  z-index: 5;
+  width: 6vw;
+  height: 6vw;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-button:nth-child(2) {
+  background-color: #f6be61;
+}
+.color-button:nth-child(3) {
+  background-color: #77aca9;
+}
+.color-button:nth-child(4) {
+  background-color: #a3a54f;
 }
 
 .color-button:active {
   transform: scale(1.1);
 }
 
-.color-button1 {
-  position: absolute;
-  background-color: #f6be61;
-  border: none;
-  border-radius: 50%;
-  width: 6%;
-  height: 9.3%;
-  margin-top: 56%;
-  left: 36.9%;
-  z-index: 5;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.color-button2 {
-  position: absolute;
-  background-color: #77aca9;
-  border: none;
-  border-radius: 50%;
-  width: 5.9%;
-  height: 9.3%;
-  margin-top: 56%;
-  left: 43.7%;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.color-button3 {
-  position: absolute;
-  background-color: #a3a54f;
-  border: none;
-  border-radius: 50%;
-  width: 6%;
-  height: 9.3%;
-  margin-top: 56%;
-  left: 50.2%;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.go {
-  position: absolute;
-  width: 100%;
-}
+/* Кнопка Reset */
 .reset-button {
-  position: absolute;
-  top: 56vw;
-  left: 57.5%;
-  width: 11%;
-  height: 8.8%;
   background-color: #f4c7c7;
-  border-radius: 1%;
   border: none;
-  cursor: pointer;
-  z-index: 5;
   border-radius: 1vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.reset-text {
-  position: absolute;
-  position: relative;
-  z-index: 2;
+  padding: 1vw 2vw;
   font-family: "Bryndan_Write";
   font-size: 3vw;
   color: #e18989;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.reset-button:active {
+  transform: scale(1.1);
+}
 /* ДВАДЦАТЬ СОРОК ВОСЕМЬ */
 .score-container {
   font-family: "Bryndan_Write";
@@ -851,7 +819,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 14vw;
-
   border-radius: 1vw;
 }
 
@@ -976,8 +943,9 @@ body {
 .scissors2 {
   width: 23%;
   position: absolute;
-  margin-top: 37%;
-  right: 80%;
+  margin-top: 35%;
+  left: 0%;
+  z-index: 3;
 }
 .pallette {
   width: 25%;
@@ -1005,7 +973,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 68vw;
+  height: 60vw;
   font-family: Arial, sans-serif;
 }
 
@@ -1065,7 +1033,6 @@ body {
 .ps4 {
   position: absolute;
   width: 90vw;
-
   z-index: -1;
 }
 .background-ps {
@@ -1263,64 +1230,104 @@ body {
 /* ГАДАНИЕ */
 .DIVINATION {
   overflow: hidden;
-  width: 100vw;
-  height: 65vw;
+  width: 100%;
+  height: 80vw;
   position: relative;
   display: flex;
   justify-content: center;
   font-family: Arial, sans-serif;
   background-color: #f8b6ba;
 }
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Все элементы внутри будут двигаться вместе с .scene */
 .table {
   position: absolute;
-  margin-top: 29.1%;
-  width: 63%;
+  width: 60%;
   z-index: 1;
 }
+.box_items {
+  width: 100%;
+  position: relative;
+  display: flex;
+  left: 41.8%;
+  bottom: 28%;
+}
+
+/* Элементы внутри box_items */
 .box {
   width: 17%;
   position: absolute;
-  margin-top: 39%;
   z-index: 1;
-  cursor: pointer;
 }
+
 .plane {
-  width: 15%;
+  width: 12%;
+  height: 9vw;
   position: absolute;
-  margin-top: 40.3%;
+  left: 0.5%;
+  margin-top: 1.2%;
   z-index: 3;
   pointer-events: none;
 }
-.curtains {
+
+.card1 {
+  width: 7vw;
   position: absolute;
-  width: 100%;
-  z-index: 3;
+  margin-top: 2%;
+  z-index: 2;
+  left: 5%;
   pointer-events: none;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
-.signboard {
-  margin-right: 4%;
-  position: absolute;
-  width: 30%;
-  z-index: 3;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 .fire1,
 .fire2 {
   position: absolute;
   animation: fire 9s infinite ease-in-out;
+  bottom: 100%;
 }
 .fire1 {
   width: 3%;
-  margin-right: 33.8%;
-  margin-top: 24%;
+  left: 65%;
 }
 .fire2 {
   width: 2.7%;
-  margin-left: 32.2%;
-  margin-top: 23%;
+  right: 65%;
 }
-
+.signboard {
+  margin-right: 4%;
+  position: absolute;
+  width: 35%;
+  left: 32.5%;
+  top: -4%;
+  z-index: 3;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+.curtains {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  right: 0%;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+.curtains2 {
+  position: absolute;
+  display: none; /* По умолчанию скрыта */
+  width: 100%;
+  top: 23%;
+  transform: scale(1.8);
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
 @keyframes fire {
   0% {
     transform: translate(0, 0) rotate(0deg);
@@ -1340,12 +1347,6 @@ body {
   100% {
     transform: translate(0, 0) rotate(0deg);
   }
-}
-.card1 {
-  width: 8.6%;
-  margin-top: 25%;
-  z-index: 2;
-  pointer-events: none;
 }
 
 /* .magic-spark {
@@ -1486,24 +1487,4 @@ body.pulse-effect {
   width: 100%;
   position: relative;
   height: 80%;
-}
-
-@media screen and (max-width: 768px) {
-  .menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .menu-item {
-    width: 35%;
-    height: 61vw;
-    gap: 3vw;
-    padding-left: 3%;
-  }
-
-  .letter {
-    font-size: 12.5vw;
-  }
-  .menu_container {
-    text-align: center; /* Центрирование текста */
-  }
 }
