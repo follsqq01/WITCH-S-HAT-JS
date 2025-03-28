@@ -67,7 +67,7 @@
   .scissors2 {
     width: 50%;
     position: absolute;
-    margin-top: 155%;
+    margin-top: 150%;
     left: -10%;
   }
   .pallette {
@@ -165,7 +165,7 @@
     width: 26%;
   }
   .drawing_game {
-    height: 100vw;
+    height: 80vw;
   }
   .canvas-container {
     margin-top: 13%;
@@ -177,7 +177,7 @@
     bottom: 78%;
   }
   .scissors {
-    top: 65%;
+    top: 55%;
   }
 }
 

@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const star = document.createElement("img");
           star.classList.add("star");
 
-          star.src = "img/vector.svg";
+          star.src = "img/Vector.svg";
           star.style.left =
             Math.random() * (gameContainer.offsetWidth - 30) + "px";
           star.style.top = "0px";
