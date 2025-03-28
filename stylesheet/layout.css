@@ -27,7 +27,7 @@ body {
   display: flex;
   display: flex;
   flex-direction: column;
-  height: 68vw;
+  height: 70vw;
 }
 .menu_container {
   margin-top: 0.5%;
@@ -91,7 +91,7 @@ body {
 .menu-item button {
   width: 97%;
   height: 15%;
-  font-size: 1.6vw;
+  font-size: 1.9vw;
   padding: 5% 5%;
   border-radius: 10px;
   font-family: "Futura_PT", sans-serif;
@@ -541,7 +541,7 @@ body {
   padding: 10px;
   gap: 5vw;
   background-color: #fbf6ed;
-  height: 75vw;
+  height: 70vw;
   position: relative;
   overflow: hidden;
 }
@@ -649,7 +649,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 65vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -829,7 +829,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 65vw;
+  height: 65.1vw;
   background-color: #a3a54f;
   overflow: hidden;
 }
@@ -921,8 +921,8 @@ body {
 
 .yellow_textile {
   position: absolute;
-  width: 30%;
-  margin-left: 81%;
+  width: 26%;
+  margin-left: 75%;
 }
 
 .lightly_pink_textile {
@@ -943,9 +943,8 @@ body {
 .scissors2 {
   width: 23%;
   position: absolute;
-  margin-top: 35%;
-  left: 0%;
-  z-index: 3;
+  margin-top: 37%;
+  right: 80%;
 }
 .pallette {
   width: 25%;
@@ -973,7 +972,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vw;
+  height: 65vw;
   font-family: Arial, sans-serif;
 }
 
@@ -1028,6 +1027,12 @@ body {
   position: absolute;
   width: 7vw;
   height: auto;
+}
+#star-template {
+  visibility: hidden; /* Вместо display: none */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .ps4 {
@@ -1231,7 +1236,7 @@ body {
 .DIVINATION {
   overflow: hidden;
   width: 100%;
-  height: 80vw;
+  height: 110vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -1243,7 +1248,7 @@ body {
   position: relative;
   width: 100%;
   height: 50vw;
-  top: 40%;
+  top: 52%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1313,9 +1318,8 @@ body {
 }
 .curtains {
   position: absolute;
-  width: 100%;
+  width: 120%;
   z-index: 3;
-  right: 0%;
   pointer-events: none;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }

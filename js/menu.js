@@ -141,3 +141,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.body.style.overflowX = "hidden";

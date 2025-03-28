@@ -7,7 +7,7 @@
     margin-right: -40%;
   }
   .menu-item button {
-    height: 15%;
+    font-size: 1.8vw;
   }
 }
 
@@ -16,9 +16,7 @@
     margin-top: 25%;
     margin-right: -40%;
   }
-  .cards_game {
-    height: 200vw;
-  }
+
   .timer {
     font-size: 6vw;
   }
@@ -33,9 +31,7 @@
     gap: 1.5vw;
   }
   .cube_game {
-    justify-content: center;
-    height: 100vw;
-    overflow: hidden;
+    height: 60vw;
   }
   .tile {
     font-size: 12vw;
@@ -56,7 +52,7 @@
     border-radius: 2vw;
   }
   .yellow_textile {
-    transform: rotate(-10deg);
+    rotate: 0deg;
     position: absolute;
     width: 60%;
     top: 4%;
@@ -169,13 +165,19 @@
     width: 26%;
   }
   .drawing_game {
-    height: 75vw;
+    height: 100vw;
   }
   .canvas-container {
-    margin-top: 10%;
+    margin-top: 13%;
   }
   .button-container {
-    margin-top: 59%;
+    margin-top: 63%;
+  }
+  .cap {
+    bottom: 78%;
+  }
+  .scissors {
+    top: 65%;
   }
 }
 
@@ -192,6 +194,12 @@
 }
 
 @media (max-aspect-ratio: 1/1) {
+  .menu_screen {
+    height: 270vw;
+  }
+  .menu-item button {
+    font-size: 3vw;
+  }
   .menu {
     flex-direction: row;
     flex-wrap: wrap;
@@ -219,7 +227,6 @@
   .cube_game {
     justify-content: center;
     height: 216vw;
-    overflow: hidden;
   }
   .tile {
     font-size: 12vw;
@@ -243,6 +250,7 @@
     position: absolute;
     width: 50%;
     top: 0%;
+    rotate: 0deg;
     margin-left: 49%;
   }
   .lightly_pink_textile {
@@ -254,7 +262,7 @@
   .scissors2 {
     width: 50%;
     position: absolute;
-    margin-top: 155%;
+    margin-top: 150%;
     left: -10%;
   }
   .pallette {
@@ -275,17 +283,17 @@
     height: 250vw;
   }
   .timer {
-    font-size: 5.3vw;
+    font-size: 6vw;
   }
   .card-container {
     grid-template-columns: repeat(3, 1fr);
     aspect-ratio: 3 / 4.7;
     gap: 1vw;
-    margin-top: 8%;
+    margin-top: 10%;
   }
   /* //гадание */
   .DIVINATION {
-    height: 179vw;
+    height: 216vw;
   }
   .scene {
     width: 200vw;
@@ -306,9 +314,9 @@
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (max-width: 1024px) {
   .cube_game {
-    height: 210vw;
+    height: 76vw;
     justify-content: center;
   }
   .yellow_textile {
@@ -338,10 +346,10 @@
   }
   #board {
     margin-top: 0%;
-    max-width: 80vw;
+    max-width: 55vw;
     z-index: 2;
-    padding: 1.5vw;
-    gap: 1.5vw;
+    padding: 1vw;
+    gap: 1vw;
   }
   .score-container {
     font-size: 4vw;
@@ -350,4 +358,4 @@
   .tile {
     font-size: 8vw;
   }
-}
+} */

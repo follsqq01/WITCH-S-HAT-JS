@@ -190,3 +190,44 @@ function resetCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
 }
+function getTouchCoordinates(event) {
+  const touch = event.touches[0];
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  return {
+    x: (touch.clientX - rect.left) * scaleX,
+    y: (touch.clientY - rect.top) * scaleY,
+  };
+}
+
+// Поддержка сенсорных устройств
+canvas.addEventListener("touchstart", (event) => {
+  event.preventDefault();
+  drawing = true;
+  const { x, y } = getTouchCoordinates(event);
+  lastX = x;
+  lastY = y;
+});
+
+canvas.addEventListener("touchmove", (event) => {
+  event.preventDefault();
+  if (!drawing) return;
+  const { x, y } = getTouchCoordinates(event);
+  ctx.strokeStyle = currentColor;
+  ctx.lineWidth = 5;
+  ctx.lineCap = "round";
+
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(x, y);
+  ctx.stroke();
+
+  lastX = x;
+  lastY = y;
+});
+
+canvas.addEventListener("touchend", () => {
+  drawing = false;
+  ctx.beginPath();
+});

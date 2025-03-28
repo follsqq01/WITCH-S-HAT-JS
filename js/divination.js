@@ -45,7 +45,7 @@ function moveCameraTo(target) {
   let centerY = sceneRect.height / 2 - rect.top - rect.height / 2;
 
   divination.style.transition = "transform 0.8s ease-in-out";
-  divination.style.transform = `translate(${centerX}px, ${centerY}px) scale(1.8)`;
+  divination.style.transform = `translate(${centerX}px, ${centerY}px) scale(1.4)`;
 
   if (curtains) {
     curtains.style.opacity = "0";
