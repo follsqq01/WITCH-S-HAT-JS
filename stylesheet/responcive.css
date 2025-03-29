@@ -22,69 +22,6 @@
   }
 }
 
-@media (max-width: 720px) {
-  #board {
-    margin-top: 0%;
-    max-width: 88vw;
-    z-index: 2;
-    padding: 1.5vw;
-    gap: 1.5vw;
-  }
-  .cube_game {
-    height: 60vw;
-  }
-  .tile {
-    font-size: 12vw;
-  }
-  .reset-rectangle {
-    position: absolute;
-    width: 150vw;
-    height: 170vw;
-    background-color: #f4c7c7;
-    z-index: 1;
-  }
-  .score-container {
-    font-family: "Bryndan_Write";
-    font-size: 7vw;
-    margin-top: 9%;
-    width: 35vw;
-    height: 10vw;
-    border-radius: 2vw;
-  }
-  .yellow_textile {
-    rotate: 0deg;
-    position: absolute;
-    width: 60%;
-    top: 4%;
-    margin-left: 81%;
-  }
-  .lightly_pink_textile {
-    position: absolute;
-    width: 65%;
-    margin-top: 147%;
-    left: -20%;
-  }
-  .scissors2 {
-    width: 50%;
-    position: absolute;
-    margin-top: 150%;
-    left: -10%;
-  }
-  .pallette {
-    width: 50%;
-    position: absolute;
-    top: 0%;
-    transform: rotate(-0deg);
-    left: 0%;
-  }
-  .pinl_textile {
-    width: 75%;
-    margin-top: 60%;
-    position: absolute;
-    left: 50%;
-    z-index: 0;
-  }
-}
 @media (max-width: 1366px) {
   .menu_container {
     margin-top: 2%;
@@ -112,57 +49,18 @@
     line-height: 1;
   }
 }
-/* @media (max-width: 1520px) {
-  .ps_game {
-    height: 70vw;
-  }
-  .background-ps {
-    width: 120vw;
-  }
-}
-
-@media (max-width: 1920px) {
-  .ps_game {
-    margin-top: -5%;
-  }
-  .background-ps {
-    width: 120vw;
-  }
-}
-@media (max-width: 1440px) {
-  .ps_game {
-    height: 70vw;
-  }
-  .background-ps {
-    margin-top: 5%;
-  }
-}
-
-@media (max-width: 1366px) {
-  .ps_game {
-    height: 70vw;
-    margin-top: -8%;
-  }
-  .headphones {
-    width: 22%;
-    margin-top: 5%;
-    margin-left: 3%;
-  }
-  .note1,
-  .note2,
-  .note3 {
-    margin-top: 5%;
-  }
-} */
 @media (max-width: 1280px) {
   .ps_game {
     height: 75vw;
+  }
+  .headphones {
+    width: 27%;
   }
   .background-ps {
     width: 152vw;
   }
   .charger {
-    width: 26%;
+    width: 25%;
   }
   .drawing_game {
     height: 80vw;
@@ -194,6 +92,20 @@
 }
 
 @media (max-aspect-ratio: 1/1) {
+  @media screen and (max-aspect-ratio: 1/1) {
+    .ps_game .rotate_screen {
+      display: flex !important;
+    }
+    .ps_game .content {
+      display: none !important;
+    }
+    .drawing_game .rotate_screen {
+      display: flex !important;
+    }
+    .drawing_game .content {
+      display: none !important;
+    }
+  }
   .menu_screen {
     height: 270vw;
   }
@@ -224,6 +136,10 @@
     padding: 1.5vw;
     gap: 1.5vw;
   }
+  .bottom1 {
+    height: 13vw;
+    max-height: 12vw;
+  }
   .cube_game {
     justify-content: center;
     height: 216vw;
@@ -253,6 +169,7 @@
     rotate: 0deg;
     margin-left: 49%;
   }
+
   .lightly_pink_textile {
     position: absolute;
     width: 65%;
@@ -282,6 +199,10 @@
   .cards_game {
     height: 250vw;
   }
+  .bottom4 {
+    height: 11vw;
+    top: 1%;
+  }
   .timer {
     font-size: 6vw;
   }
@@ -293,12 +214,15 @@
   }
   /* //гадание */
   .DIVINATION {
-    height: 216vw;
+    height: 219vw;
+  }
+  .bottom5 {
+    height: 13vw;
   }
   .scene {
     width: 200vw;
     height: 50vw;
-    margin-top: 59%;
+    margin-top: 33.8%;
     transform: scale(2); /* Увеличиваем в 2 раза */
   }
 
@@ -313,49 +237,3 @@
     display: block; /* Показываем адаптивную версию */
   }
 }
-
-/* @media (max-width: 1024px) {
-  .cube_game {
-    height: 76vw;
-    justify-content: center;
-  }
-  .yellow_textile {
-    width: 55%;
-    top: 0%;
-    right: 0%;
-  }
-  .pinl_textile {
-    width: 40%;
-    left: 60%;
-    top: 148.2%;
-  }
-  .pallette {
-    width: 45%;
-    top: 0%;
-    left: 0%;
-  }
-  .scissors2 {
-    width: 45%;
-    right: 60%;
-    top: 150%;
-  }
-  .lightly_pink_textile {
-    width: 55%;
-    left: 0%;
-    top: 152.1%;
-  }
-  #board {
-    margin-top: 0%;
-    max-width: 55vw;
-    z-index: 2;
-    padding: 1vw;
-    gap: 1vw;
-  }
-  .score-container {
-    font-size: 4vw;
-    width: 20vw;
-  }
-  .tile {
-    font-size: 8vw;
-  }
-} */

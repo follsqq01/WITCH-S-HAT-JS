@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 let drawing = false;
 let lastX = 0;
 let lastY = 0;
-let currentColor = "#000000"; // Цвет линии по умолчанию - черный
+let currentColor = "#000000"; // Цвет линии по умолчанию - черный (концепт)
 
 function resizeCanvas() {
   const container = document.querySelector(".canvas-container");
@@ -88,10 +88,10 @@ draggableItems.forEach((item) => {
     offsetY = startY - rect.top;
 
     activeElement.style.position = "absolute";
-    activeElement.style.zIndex = "1000"; // Поднимаем над остальными
+    activeElement.style.zIndex = "1000";
     activeElement.style.cursor = "grabbing";
 
-    document.body.style.userSelect = "none"; // Отключаем выделение текста
+    document.body.style.userSelect = "none";
   });
 });
 
@@ -114,29 +114,6 @@ document.addEventListener("mouseup", () => {
     activeElement = null;
     document.body.style.userSelect = "";
   }
-});
-draggableItems.forEach((item) => {
-  item.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    activeElement = e.target;
-    console.log("Перетаскивание началось с: ", activeElement);
-
-    if (!activeElement.parentElement.style.position) {
-      activeElement.parentElement.style.position = "relative";
-    }
-
-    const rect = activeElement.getBoundingClientRect();
-    startX = e.clientX;
-    startY = e.clientY;
-    offsetX = startX - rect.left;
-    offsetY = startY - rect.top;
-
-    activeElement.style.position = "absolute";
-    activeElement.style.zIndex = "1000"; // Поднимаем над остальными
-    activeElement.style.cursor = "grabbing";
-
-    document.body.style.userSelect = "none"; // Отключаем выделение текста
-  });
 });
 
 // Розовая кнопка
@@ -230,4 +207,38 @@ canvas.addEventListener("touchmove", (event) => {
 canvas.addEventListener("touchend", () => {
   drawing = false;
   ctx.beginPath();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const rotateScreen = document.querySelector(".rotate_screen");
+
+  function checkOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+      rotateScreen.style.display = "flex";
+    } else {
+      rotateScreen.style.display = "none";
+    }
+  }
+
+  checkOrientation();
+
+  window.addEventListener("orientationchange", checkOrientation);
+  window.addEventListener("resize", checkOrientation);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const rotateScreen = document.querySelector(".rotate_screen");
+
+  function checkOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+      rotateScreen.style.display = "flex";
+    } else {
+      rotateScreen.style.display = "none";
+    }
+  }
+
+  checkOrientation(); // Это должно проверять ориентацию при загрузке
+
+  window.addEventListener("orientationchange", checkOrientation);
+  window.addEventListener("resize", checkOrientation);
 });

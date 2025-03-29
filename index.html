@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Карточная игра "Найди пару"</title>
     <link rel="stylesheet" href="stylesheet/style.css" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -74,18 +75,10 @@
           </button>
         </div>
       </div>
-      <!-- <div class="rectangles_menu">
-        <img class="rectangle_menu1" src="img/rectangle_menu1.svg">
-        <img class="rectangle_menu2" src="img/rectangle_menu2.svg">
-        <img class="rectangle_menu3" src="img/rectangle_menu3.svg">
-        <img class="rectangle_menu4" src="img/rectangle_menu4.svg">
-        <img class="rectangle_menu5" src="img/rectangle_menu5.svg">
-    </div> -->
     </section>
-
     <section id="cards_game" class="cards_game">
+      <img class="bottom4" src="img/bottom_back.svg" />
       <div class="card-container">
-        <!-- Карточки, каждая с фиксированной шириной и высотой -->
         <div class="card" data-id="1">
           <div
             class="card-front"
@@ -280,6 +273,7 @@
     </section>
 
     <section class="drawing_game" id="drawing_game">
+      <img class="bottom2" src="img/bottom_back.svg" />
       <section class="rotate_screen">
         <img class="rotate_img" src="img/rotate.svg" />
         <p>Please rotate your screen<br />to landscape orientation</p>
@@ -308,6 +302,7 @@
     </section>
 
     <section class="cube_game" id="2048_game">
+      <img class="bottom1" src="img/bottom_back.svg" />
       <div id="board"></div>
       <h2 class="score-container">Score: <span id="score">0</span></h2>
       <img class="yellow_textile" src="img/yellow_textile.svg" />
@@ -323,6 +318,7 @@
         <img class="rotate_img" src="img/rotate.svg" />
         <p>Please rotate your screen<br />to landscape orientation</p>
       </section>
+      <img class="bottom_ps" src="img/bottom_back_ps.svg" />
       <h2 class="score-container2">Score: <span id="score1">0/18</span></h2>
       <div id="game-container">
         <img id="blue_hat" src="img/blue_cap.svg" />
@@ -351,7 +347,9 @@
       <img class="letters" src="img/letters.svg" />
       <img id="star-template" class="star hidden" src="img/Vector.svg" />
     </section>
+
     <section class="DIVINATION" id="divination_game">
+      <img class="bottom5" src="img/bottom_back.svg" />
       <div class="scene">
         <img class="table" src="img/table.svg" />
         <div class="box_items">
@@ -376,13 +374,11 @@
     <audio id="music" src="audio/Whispered_Wonders.mp3" loop></audio>
     <audio id="clickSound" src="audio/magic_click.mp3"></audio>
     <audio id="tabSound" src="audio/tab.mp3"></audio>
-
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="js/cards.js"></script>
     <script src="js/canvas.js"></script>
     <script src="js/2048.js"></script>
     <script src="js/ps.js"></script>
-    <script src="js/loading_page.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/divination.js"></script>
   </body>

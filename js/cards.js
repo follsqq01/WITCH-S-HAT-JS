@@ -37,14 +37,14 @@ function flipCard() {
   checkForMatch();
 }
 
-// Проверка совпадения
+// Проверка
 function checkForMatch() {
   firstCard.dataset.id === secondCard.dataset.id
     ? disableCards()
     : unflipCards();
 }
 
-// Деактивация совпавших карт
+// Деактивация
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
@@ -58,7 +58,7 @@ function disableCards() {
   }
 }
 
-// Закрытие не совпавших карт
+// Закрытие не совпавших карт :(
 function unflipCards() {
   lockBoard = true;
   setTimeout(() => {
@@ -68,12 +68,11 @@ function unflipCards() {
   }, 1000);
 }
 
-// Сброс переменных
 function resetBoard() {
   [firstCard, secondCard, lockBoard] = [null, null, false];
 }
 
-// Перезапуск игры
+// Перезапуск игрульки
 function restartGame(skipHeightUpdate = false) {
   matchedPairs = 0;
   timeRemaining = 60;
@@ -151,7 +150,6 @@ const observer = new IntersectionObserver(
 
 observer.observe(container);
 
-// Остановка таймера при скрытии игры
 const gameSection = document.getElementById("cards_game");
 const visibilityObserver = new MutationObserver(() => {
   if (getComputedStyle(gameSection).display === "none")
@@ -164,7 +162,6 @@ visibilityObserver.observe(document.body, {
   subtree: true,
 });
 
-// Запуск при загрузке страницы
 window.addEventListener("DOMContentLoaded", () => {
   shuffleCards();
   document

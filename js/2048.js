@@ -174,7 +174,7 @@ document.addEventListener("keydown", (event) => {
   const keysToPrevent = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 
   if (keysToPrevent.includes(event.key)) {
-    event.preventDefault(); // Отключает стандартное действие для этих клавиш
+    event.preventDefault();
   }
 });
 

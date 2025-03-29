@@ -87,7 +87,6 @@ body {
   width: 4%;
 }
 
-/* Стиль для кнопок */
 .menu-item button {
   width: 97%;
   height: 15%;
@@ -129,7 +128,61 @@ body {
   grid-column: 5;
   border-color: #f6be61;
 }
+.menu-item {
+  width: 16%;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.45vw;
+}
+.button_catch_star a {
+  color: #f8c4bb;
+  text-decoration: none;
+}
+.button_2048 a {
+  color: #f28482;
+  text-decoration: none;
+}
+.button_canvas a {
+  color: #a3a54f;
+  text-decoration: none;
+}
+.button_find_a_couple a {
+  color: #84a59d;
+  text-decoration: none;
+}
+.button_divination a {
+  color: #f6be61;
+  text-decoration: none;
+}
 
+.first_game_cube {
+  background-color: #f28482;
+}
+
+.second_game_canvas {
+  background-color: #a3a54f;
+}
+
+.third_game_cap {
+  background-color: #f8c4bb;
+}
+
+.fouth_game_card {
+  background-color: #84a59d;
+}
+
+.fifth_game_card {
+  background-color: #f6be61;
+}
+
+.menu-item > div {
+  width: 100%;
+  position: relative;
+  height: 80%;
+}
 .buttons_menu button a {
   text-decoration: none;
   color: inherit;
@@ -186,7 +239,7 @@ body {
   animation-name: sway128;
 }
 
-/* Разные вариации покачивания */
+/* Разные вариации покачивания, чтоб нескучно было! */
 @keyframes sway4 {
   0% {
     transform: rotate(-5deg) translateX(-3px);
@@ -242,7 +295,7 @@ body {
   animation-play-state: running;
 }
 
-/* Шапка */
+/* колпак */
 .cap_menu {
   position: absolute;
   width: 65%;
@@ -261,7 +314,7 @@ body {
   animation-duration: 2.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-play-state: paused; /* По умолчанию анимация на паузе */
+  animation-play-state: paused;
 }
 
 /* Разные движения для звезд */
@@ -501,7 +554,6 @@ body {
   }
 }
 
-/* Анимация для движения луны (имитация зрачка) */
 @keyframes moveMoon {
   0% {
     transform: translateX(0) translateY(0);
@@ -670,7 +722,7 @@ body {
   margin-top: 6%;
   border-radius: 2%;
   z-index: 1;
-  pointer-events: none; /* Фон не мешает взаимодействию с холстом */
+  pointer-events: none;
 }
 
 #drawingCanvas {
@@ -762,7 +814,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1vw; /* Отступы между элементами */
+  gap: 1vw;
   margin-top: 56%;
 }
 
@@ -790,7 +842,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Кнопка Reset */
 .reset-button {
   background-color: #f4c7c7;
   border: none;
@@ -1140,7 +1191,6 @@ body {
   left: 78%;
   top: 2%;
 }
-
 .note1,
 .note2,
 .note3 {
@@ -1232,6 +1282,7 @@ body {
   top: 64%;
   left: 11.5%;
 }
+
 /* ГАДАНИЕ */
 .DIVINATION {
   overflow: hidden;
@@ -1254,7 +1305,6 @@ body {
   align-items: center;
 }
 
-/* Все элементы внутри будут двигаться вместе с .scene */
 .table {
   position: absolute;
   width: 60%;
@@ -1268,7 +1318,6 @@ body {
   bottom: 28%;
 }
 
-/* Элементы внутри box_items */
 .box {
   width: 17%;
   position: absolute;
@@ -1325,7 +1374,7 @@ body {
 }
 .curtains2 {
   position: absolute;
-  display: none; /* По умолчанию скрыта */
+  display: none;
   width: 100%;
   top: 23%;
   transform: scale(1.8);
@@ -1386,7 +1435,6 @@ body.pulse-effect {
   }
 }
 .rotate_screen {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1395,41 +1443,23 @@ body.pulse-effect {
   background-color: #a3a54f;
   color: #f8c4bb;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 4vw;
   font-weight: bold;
   z-index: 9999;
 }
 
 .rotate_img {
-  width: 40%;
+  width: 40%; /* Размер изображения в процентах */
   height: auto;
-  margin-bottom: 5vh;
+  margin-bottom: 5vh; /* Отступ от текста */
 }
 
 .rotate_screen p {
   position: absolute;
   bottom: 5vh;
   text-align: center;
-}
-
-@media screen and (max-aspect-ratio: 1/1) {
-  .ps_game .rotate_screen {
-    display: flex !important;
-  }
-  .ps_game .content {
-    display: none !important;
-  }
-  .drawing_game .rotate_screen {
-    display: flex !important;
-  }
-  .drawing_game .content {
-    display: none !important;
-  }
+  font-size: 3vw; /* Можно подправить для лучшего отображения */
 }
 
 .menu {
@@ -1437,58 +1467,24 @@ body.pulse-effect {
   justify-content: center;
   gap: 3.7vw;
 }
-.menu-item {
-  width: 16%;
-  height: 30vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.45vw;
+.bottom_ps,
+.bottom1,
+.bottom2,
+.bottom4,
+.bottom5 {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  right: 0;
+  z-index: 10;
 }
-.button_catch_star a {
-  color: #f8c4bb;
-  text-decoration: none;
+.bottom_ps,
+.bottom1,
+.bottom2,
+.bottom4,
+.bottom5 {
+  height: 10%;
 }
-.button_2048 a {
-  color: #f28482;
-  text-decoration: none;
-}
-.button_canvas a {
-  color: #a3a54f;
-  text-decoration: none;
-}
-.button_find_a_couple a {
-  color: #84a59d;
-  text-decoration: none;
-}
-.button_divination a {
-  color: #f6be61;
-  text-decoration: none;
-}
-
-.first_game_cube {
-  background-color: #f28482;
-}
-
-.second_game_canvas {
-  background-color: #a3a54f;
-}
-
-.third_game_cap {
-  background-color: #f8c4bb;
-}
-
-.fouth_game_card {
-  background-color: #84a59d;
-}
-
-.fifth_game_card {
-  background-color: #f6be61;
-}
-
-.menu-item > div {
-  width: 100%;
-  position: relative;
-  height: 80%;
+.bottom1 {
+  height: 11%;
 }

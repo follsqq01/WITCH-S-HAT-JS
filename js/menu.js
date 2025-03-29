@@ -124,21 +124,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Включение музыки по клику (из-за блокировки браузером)
+  // Включение музыки по клику, чтобы пользователь не испугался, как только зашел на сайт
   document.addEventListener("click", playMusic, { once: true });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const clickSound = document.getElementById("clickSound");
-  clickSound.volume = 0.3; // Громкость на 50%
-
-  document.querySelector(".buttons_menu").addEventListener("click", (event) => {
-    if (event.target.tagName === "BUTTON" || event.target.closest("button")) {
-      clickSound.currentTime = 0; // Чтобы звук проигрывался заново при каждом клике
-      clickSound
-        .play()
-        .catch((error) => console.log("Ошибка воспроизведения звука:", error));
-    }
-  });
+  clickSound.volume = 0.3;
 });
 document.body.style.overflowX = "hidden";
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(
+    ".bottom_ps, .bottom1, .bottom2, .bottom4, .bottom5"
+  );
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const menuScreen = document.querySelector(".menu_screen");
+      const currentSection = button.closest("section");
+
+      if (menuScreen && currentSection) {
+        currentSection.style.display = "none";
+        menuScreen.scrollIntoView({ behavior: "smooth" });
+        menuScreen.style.display = "flex";
+      }
+    });
+  });
+});

@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const starTemplate = document.getElementById("star-template");
     const star = starTemplate.cloneNode(true);
 
-    star.removeAttribute("id"); // Убираем id, чтобы избежать конфликтов
-    star.style.visibility = "visible"; // Делаем клонированную звезду видимой
+    star.removeAttribute("id");
+    star.style.visibility = "visible";
     star.style.position = "absolute";
     star.style.left = Math.random() * (gameContainer.offsetWidth - 30) + "px";
     star.style.top = "0px";
@@ -126,15 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
             stars.forEach((star) => star.remove());
           }
         }
-
-        // Запускаем проверку ориентации при загрузке страницы
         checkOrientation();
 
-        // Обработчик события на изменение размера экрана
         window.addEventListener("resize", checkOrientation);
 
         function createStar() {
-          if (score >= 18) return; // Проверяем, не достиг ли счёт 18
+          if (score >= 18) return; //проверка никогда не повредит//
 
           const star = document.createElement("img");
           star.classList.add("star");
@@ -188,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }, 50);
         }
 
-        // Функция для управления движением шляпы
+        //  управление движением колпачка
         function moveHat(event) {
           const step = 30;
           const minLeft = 0;
@@ -366,6 +363,8 @@ const tabSound = document.getElementById("tabSound");
 //     }
 // }
 
+//один из эффектов, который не потребовался, но он красивый//
+
 document.addEventListener("DOMContentLoaded", function () {
   const lettersImg = document.querySelector(".letters");
   if (lettersImg) {
@@ -381,12 +380,12 @@ function triggerPulseEffect() {
     document.body.classList.remove("pulse-effect");
   }, 500);
 }
-// Добавляем поддержку сенсорного управления (перетаскивание пальцем)
-hat.addEventListener("touchstart", (event) => {
+//  сенсорное управление
+blue_hat.addEventListener("touchstart", (event) => {
   event.preventDefault();
 });
 
-hat.addEventListener("touchmove", (event) => {
+blue_hat.addEventListener("touchmove", (event) => {
   event.preventDefault();
   let touchX = event.touches[0].clientX;
   let rect = gameContainer.getBoundingClientRect();
